@@ -32,33 +32,33 @@
   }
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
     hsl(0, 0%, 19%) 97%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
+    to bottom right,
+    hsla(240, 1%, 18%, 0.251) 0%,
     hsla(240, 2%, 11%, 0) 100%
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
+    135deg,
+    hsla(45, 100%, 71%, 0.251) 0%,
     hsla(35, 100%, 68%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
+    to right,
+    hsl(45, 100%, 72%),
     hsl(35, 100%, 68%)
   );
 
@@ -144,6 +144,14 @@ a{
   display: inline;
 }
 
+body.light-theme a {
+  color: hsl(210, 70%, 45%); /* Dark blue for links in light theme */
+}
+
+body.light-theme a:hover {
+  color: hsl(210, 70%, 65%); /* Lighter blue for hover in light theme */
+}
+
 button {
   font: inherit;
   background: none;
@@ -164,11 +172,45 @@ input, textarea {
   color: var(--smoky-black);
 }
 
+body.light-theme ::selection {
+  background: hsl(25, 85%, 65%); /* Lighter version of new accent for selection background */
+  color: hsl(0, 0%, 100%); /* White text for good contrast on selection */
+}
+
 :focus { outline-color: var(--orange-yellow-crayola); }
 
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
+
+body.light-theme {
+  /* Light theme variable overrides */
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 95%) 3%, hsl(0, 0%, 90%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 90%, 0.251) 0%, hsla(0, 0%, 85%, 0) 100%), hsl(0, 0%, 98%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 85%) 0%, hsla(0, 0%, 85%, 0) 50%);
+  
+  --jet: hsl(0, 0%, 80%); /* Light gray for borders */
+  --onyx: hsl(0, 0%, 90%); /* Light gray for secondary backgrounds */
+  --eerie-black-1: hsl(0, 0%, 97%); /* Slightly off-white */
+  --eerie-black-2: hsl(0, 0%, 100%); /* White for main content backgrounds */
+  --smoky-black: hsl(0, 0%, 96%); /* Very light gray for body background */
+  
+  --white-1: hsl(0, 0%, 20%); /* Dark text color */
+  --white-2: hsl(0, 0%, 15%); /* Darker text color */
+  
+  --orange-yellow-crayola: hsl(25, 85%, 45%); /* Darker orange accent */
+  --vegas-gold: hsl(35, 70%, 40%); /* Adjusted accent for timeline */
+  
+  --light-gray: hsl(0, 0%, 30%); /* Darker gray for text */
+  --light-gray-70: hsl(0, 0%, 50%); /* Medium gray for less prominent text */
+  
+  --text-gradient-yellow: linear-gradient(to right, hsl(25, 85%, 45%), hsl(15, 80%, 40%));
+  
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(25, 85%, 55%) 0%, hsla(15, 80%, 50%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(25, 85%, 55%, 0.251) 0%, hsla(15, 80%, 50%, 0) 59.86%), hsl(0, 0%, 98%);
+
+  --bittersweet-shimmer: hsl(0, 60%, 60%); /* Adjusted for light theme if needed */
+}
 
 
 
@@ -278,9 +320,17 @@ article.active {
   border-radius: 5px;
 }
 
+body.light-theme .has-scrollbar::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 90%); /* Light track for light theme */
+}
+
 .has-scrollbar::-webkit-scrollbar-thumb {
   background: var(--orange-yellow-crayola);
   border-radius: 5px;
+}
+
+body.light-theme .has-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 70%); /* Darker thumb for light theme scrollbar */
 }
 
 .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
@@ -1211,6 +1261,10 @@ main {
   filter: grayscale(1) invert(1);
 }
 
+body.light-theme .mapbox iframe {
+  filter: grayscale(0.5); /* Adjusted filter for light theme */
+}
+
 .contact-form { margin-bottom: 10px; }
 
 .form-title { margin-bottom: 20px; }
@@ -1850,6 +1904,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar-track { background: var(--smoky-black); }
 
+  body.light-theme::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 92%); /* Light page background for track in light theme */
+  }
+
   body::-webkit-scrollbar-thumb {
     border: 5px solid var(--smoky-black);
     background: hsla(0, 0%, 100%, 0.1);
@@ -1858,7 +1916,16 @@ textarea.form-input::-webkit-resizer { display: none; }
                 inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
   }
 
+  body.light-theme::-webkit-scrollbar-thumb {
+    border: 5px solid hsl(0, 0%, 92%); /* Match new page background for light theme */
+    background: hsla(0, 0%, 0%, 0.2); /* Darker thumb for light theme */
+  }
+
   body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+
+  body.light-theme::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 0%, 0.3); /* Slightly darker thumb on hover for light theme */
+  }
 
   body::-webkit-scrollbar-button { height: 60px; }
 

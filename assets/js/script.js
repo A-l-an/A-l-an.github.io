@@ -75,6 +75,43 @@ for (let i = 0; i < selectItems.length; i++) {
   });
 }
 
+
+
+// Theme Toggling Logic
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+const body = document.body;
+const themeToggleIcon = themeToggleBtn ? themeToggleBtn.querySelector('ion-icon') : null;
+
+function applyTheme(theme) {
+  if (theme === 'light-theme') {
+    body.classList.add('light-theme');
+    if (themeToggleIcon) themeToggleIcon.setAttribute('name', 'moon-outline');
+  } else {
+    body.classList.remove('light-theme'); // Assuming dark is default (no class)
+    if (themeToggleIcon) themeToggleIcon.setAttribute('name', 'sunny-outline');
+  }
+}
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else {
+  applyTheme('dark-theme'); // Default to dark theme if nothing is saved
+}
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', function() {
+    let newTheme;
+    if (body.classList.contains('light-theme')) {
+      newTheme = 'dark-theme';
+    } else {
+      newTheme = 'light-theme';
+    }
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
