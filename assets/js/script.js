@@ -75,6 +75,64 @@ for (let i = 0; i < selectItems.length; i++) {
   });
 }
 
+
+
+// theme toggle
+const themeToggleBtn = document.querySelector("[data-theme-toggle]");
+const themeToggleIcon = document.querySelector("[data-theme-icon]");
+const themeToggleState = document.querySelector("[data-theme-state]");
+
+const setTheme = function (mode) {
+  if (mode === "light") {
+    document.body.classList.add("theme-light");
+  } else {
+    document.body.classList.remove("theme-light");
+    mode = "dark";
+  }
+
+  if (themeToggleIcon) {
+    themeToggleIcon.name = mode === "light" ? "sunny-outline" : "moon-outline";
+  }
+
+  if (themeToggleState) {
+    themeToggleState.innerText = mode === "light" ? "Day" : "Night";
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.setAttribute(
+      "aria-label",
+      mode === "light" ? "Switch to night mode" : "Switch to day mode"
+    );
+    themeToggleBtn.setAttribute(
+      "aria-pressed",
+      mode === "light" ? "true" : "false"
+    );
+  }
+
+  try {
+    localStorage.setItem("preferred-theme", mode);
+  } catch (error) {
+    // ignore storage failures (e.g., privacy mode)
+  }
+};
+
+const storedTheme = (function () {
+  try {
+    return localStorage.getItem("preferred-theme");
+  } catch (error) {
+    return null;
+  }
+})();
+
+setTheme(storedTheme === "light" || storedTheme === "dark" ? storedTheme : "dark");
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", function () {
+    const nextTheme = document.body.classList.contains("theme-light") ? "dark" : "light";
+    setTheme(nextTheme);
+  });
+}
+
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
