@@ -149,8 +149,8 @@ body.theme-light {
   );
   --text-gradient-yellow: linear-gradient(
     to right,
-    hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%)
+    hsl(44, 68%, 46%),
+    hsl(34, 64%, 44%)
   );
 
   /* solids */
@@ -161,8 +161,8 @@ body.theme-light {
   --smoky-black: hsl(210, 36%, 96%);
   --white-1: hsl(210, 22%, 18%); /* primary text */
   --white-2: hsl(210, 22%, 22%); /* secondary text */
-  --orange-yellow-crayola: hsl(45, 100%, 55%);
-  --vegas-gold: hsl(45, 54%, 44%);
+  --orange-yellow-crayola: hsl(44, 68%, 46%);
+  --vegas-gold: hsl(44, 48%, 40%);
   --light-gray: hsl(210, 14%, 28%); /* body text on light bg */
   --light-gray-70: hsla(210, 14%, 28%, 0.75);
   --bittersweet-shimmer: hsl(0, 43%, 40%);
@@ -195,7 +195,7 @@ li { list-style: none; }
 img, ion-icon, button, time, span { display: block; }
 
 a{
-  color: hsla(45, 100%, 71%, 0.621);
+  color: var(--orange-yellow-crayola);
   display: inline;
 }
 
