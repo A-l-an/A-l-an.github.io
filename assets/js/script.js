@@ -84,9 +84,9 @@ const themeToggleState = document.querySelector("[data-theme-state]");
 
 const setTheme = function (mode, persist = true) {
   if (mode === "light") {
-    document.body.classList.add("theme-light");
+    document.documentElement.classList.add("theme-light");
   } else {
-    document.body.classList.remove("theme-light");
+    document.documentElement.classList.remove("theme-light");
     mode = "dark";
   }
 
@@ -142,7 +142,7 @@ if (!userChoseTheme && prefersLightQuery.addEventListener) {
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", function () {
-    const nextTheme = document.body.classList.contains("theme-light") ? "dark" : "light";
+    const nextTheme = document.documentElement.classList.contains("theme-light") ? "dark" : "light";
     setTheme(nextTheme);
   });
 }

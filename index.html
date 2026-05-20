@@ -8,6 +8,21 @@
   <title>Junan XIE</title>
 
   <!--
+    - theme preference (inline so it runs before paint, avoiding a dark/light flash)
+  -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('preferred-theme');
+        var prefersLight = stored === 'light' ||
+          (stored !== 'dark' && window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: light)').matches);
+        if (prefersLight) document.documentElement.classList.add('theme-light');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!--
     - favicon
   -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">

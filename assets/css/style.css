@@ -119,60 +119,94 @@
 
 }
 
-body.theme-light {
+:root.theme-light {
 
   /* gradients */
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(210, 20%, 96%) 0%,
-    hsl(210, 16%, 90%) 100%
+    hsl(210, 24%, 92%) 0%,
+    hsl(210, 18%, 84%) 100%
   );
   --bg-gradient-jet: linear-gradient(
     to bottom right,
-    hsl(210, 18%, 94%) 0%,
-    hsl(210, 16%, 86%) 100%
+    hsl(210, 20%, 100%) 0%,
+    hsl(210, 18%, 97%) 100%
   );
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
-    hsl(45, 100%, 78%) 0%,
-    hsla(36, 100%, 74%, 0) 50%
+    hsl(38, 92%, 80%) 0%,
+    hsla(28, 88%, 72%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
     135deg,
-    hsla(45, 100%, 76%, 0.25) 0%,
-    hsla(35, 100%, 72%, 0) 59.86%
-  ), hsl(210, 24%, 96%);
+    hsla(38, 90%, 76%, 0.35) 0%,
+    hsla(28, 85%, 68%, 0) 59.86%
+  ), hsl(210, 20%, 100%);
   --border-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(210, 16%, 85%) 0%,
-    hsla(210, 16%, 85%, 0) 50%
+    hsl(210, 18%, 80%) 0%,
+    hsla(210, 18%, 80%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
     to right,
-    hsl(44, 68%, 46%),
-    hsl(34, 64%, 44%)
+    hsl(34, 78%, 38%),
+    hsl(24, 72%, 36%)
   );
 
   /* solids */
-  --jet: hsl(210, 16%, 85%);
-  --onyx: hsl(210, 20%, 95%);
-  --eerie-black-1: hsl(210, 24%, 99%);
-  --eerie-black-2: hsl(210, 32%, 98%);
-  --smoky-black: hsl(210, 36%, 96%);
-  --white-1: hsl(210, 22%, 18%); /* primary text */
-  --white-2: hsl(210, 22%, 22%); /* secondary text */
-  --orange-yellow-crayola: hsl(44, 68%, 46%);
-  --vegas-gold: hsl(44, 48%, 40%);
-  --light-gray: hsl(210, 14%, 28%); /* body text on light bg */
-  --light-gray-70: hsla(210, 14%, 28%, 0.75);
-  --bittersweet-shimmer: hsl(0, 43%, 40%);
+  --jet: hsl(210, 18%, 82%);                       /* borders */
+  --onyx: hsl(210, 22%, 92%);                      /* chip / tag bg */
+  --eerie-black-1: hsl(0, 0%, 100%);               /* card inner */
+  --eerie-black-2: hsl(0, 0%, 100%);               /* card outer */
+  --smoky-black: hsl(210, 22%, 93%);               /* page bg — cooler & darker so cards stand off */
+  --white-1: hsl(214, 32%, 11%);                   /* primary text — near-black, slightly cool */
+  --white-2: hsl(214, 28%, 15%);                   /* secondary text */
+  --orange-yellow-crayola: hsl(32, 82%, 38%);      /* accent — passes AA on white */
+  --vegas-gold: hsl(32, 60%, 34%);
+  --light-gray: hsl(214, 18%, 22%);                /* body text */
+  --light-gray-70: hsla(214, 16%, 26%, 0.88);      /* muted — bumped from .75 for legibility */
+  --bittersweet-shimmer: hsl(0, 58%, 42%);
 
-  /* shadows */
-  --shadow-1: -4px 8px 24px hsla(210, 30%, 30%, 0.12);
-  --shadow-2: 0 16px 30px hsla(210, 30%, 30%, 0.12);
-  --shadow-3: 0 16px 40px hsla(210, 30%, 30%, 0.12);
-  --shadow-4: 0 25px 50px hsla(210, 30%, 30%, 0.1);
-  --shadow-5: 0 24px 80px hsla(210, 30%, 30%, 0.12);
+  /* shadows — two-layer (close key + soft ambient) for natural lift */
+  --shadow-1: 0 1px 2px hsla(214, 30%, 22%, 0.06),
+              0 6px 16px hsla(214, 30%, 22%, 0.08);
+  --shadow-2: 0 2px 4px hsla(214, 30%, 22%, 0.05),
+              0 12px 28px hsla(214, 30%, 22%, 0.09);
+  --shadow-3: 0 3px 6px hsla(214, 30%, 22%, 0.05),
+              0 16px 36px hsla(214, 30%, 22%, 0.1);
+  --shadow-4: 0 4px 10px hsla(214, 30%, 22%, 0.05),
+              0 24px 50px hsla(214, 30%, 22%, 0.08);
+  --shadow-5: 0 6px 14px hsla(214, 30%, 22%, 0.06),
+              0 28px 64px hsla(214, 30%, 22%, 0.1);
+}
+
+/* light-mode-only fixes for elements that assume a dark canvas */
+.theme-light .mapbox iframe {
+  filter: none;
+}
+
+.theme-light ::selection {
+  background: var(--orange-yellow-crayola);
+  color: hsl(0, 0%, 100%);
+}
+
+.theme-light::-webkit-scrollbar-track {
+  background: var(--smoky-black);
+}
+
+.theme-light::-webkit-scrollbar-thumb {
+  border: 5px solid var(--smoky-black);
+  background: hsla(214, 28%, 30%, 0.28);
+  box-shadow: none;
+}
+
+.theme-light::-webkit-scrollbar-thumb:hover {
+  background: hsla(214, 28%, 30%, 0.42);
+}
+
+/* timeline dot halo should match the card surface, not the dark-mode jet */
+.theme-light .timeline-item::after {
+  box-shadow: 0 0 0 4px var(--eerie-black-1);
 }
 
 
@@ -590,10 +624,10 @@ main {
   opacity: 0.7;
 }
 
-body.theme-light .navbar {
-  background: hsla(210, 40%, 98%, 0.92);
-  border-color: hsl(210, 16%, 85%);
-  box-shadow: var(--shadow-3);
+.theme-light .navbar {
+  background: hsla(210, 30%, 99%, 0.85);
+  border-color: var(--jet);
+  box-shadow: var(--shadow-2);
 }
 
 
