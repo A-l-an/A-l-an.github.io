@@ -18,71 +18,51 @@
 :root {
 
   /**
-   * colors
+   * colors — jonathanruizg.com palette (dark theme defaults)
    */
 
-  /* gradient */
+  /* helper utilities (kept) */
 
   .nowrap {
     white-space: nowrap;
   }
 
   .inline-span {
-    display: inline; /* 或者使用 inline-block */
+    display: inline;
   }
 
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+  /* gradient tokens — flattened to flat surfaces to match the reference aesthetic */
+  --bg-gradient-onyx: #1C1C1A;
+  --bg-gradient-jet: #141412;
+  --bg-gradient-yellow-1: #FF5F40;
+  --bg-gradient-yellow-2: #FF7A5C;
+  --border-gradient-onyx: #222220;
+  --text-gradient-yellow: linear-gradient(to right, #FF5F40, #FF7A5C);
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --jet: #222220;                            /* borders */
+  --onyx: #1C1C1A;                           /* chip / tag bg */
+  --eerie-black-1: #141412;                  /* card inner */
+  --eerie-black-2: #141412;                  /* card outer */
+  --smoky-black: #0A0A08;                    /* page bg */
+  --white-1: #F0F0EC;                        /* primary text */
+  --white-2: #F0F0EC;                        /* secondary text */
+  --orange-yellow-crayola: #FF5F40;          /* accent */
+  --vegas-gold: #AAAAA6;                     /* muted accent / dates */
+  --light-gray: #AAAAA6;                     /* body text */
+  --light-gray-70: hsla(60, 4%, 67%, 0.78);  /* muted body text */
+  --bittersweet-shimmer: #E54E30;            /* error / accent-hover */
+  --accent-light: #1F0E08;                   /* tinted hover surface */
+  --accent-hover: #FF7A5C;                   /* accent-hover (dark mode is lighter) */
 
   /**
    * typography
    */
 
   /* font-family */
-  --ff-poppins: 'Poppins', sans-serif;
+  --ff-poppins: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --ff-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* font-size */
   --fs-1: 24px;
@@ -121,63 +101,41 @@
 
 :root.theme-light {
 
-  /* gradients */
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(210, 24%, 92%) 0%,
-    hsl(210, 18%, 84%) 100%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right,
-    hsl(210, 20%, 100%) 0%,
-    hsl(210, 18%, 97%) 100%
-  );
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right,
-    hsl(38, 92%, 80%) 0%,
-    hsla(28, 88%, 72%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg,
-    hsla(38, 90%, 76%, 0.35) 0%,
-    hsla(28, 85%, 68%, 0) 59.86%
-  ), hsl(210, 20%, 100%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(210, 18%, 80%) 0%,
-    hsla(210, 18%, 80%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right,
-    hsl(34, 78%, 38%),
-    hsl(24, 72%, 36%)
-  );
+  /* gradient tokens — flat surfaces, matching reference palette */
+  --bg-gradient-onyx: #E5E5E1;
+  --bg-gradient-jet: #EFEFEC;
+  --bg-gradient-yellow-1: #FF5F40;
+  --bg-gradient-yellow-2: #E54E30;
+  --border-gradient-onyx: #E0E0DC;
+  --text-gradient-yellow: linear-gradient(to right, #FF5F40, #E54E30);
 
   /* solids */
-  --jet: hsl(210, 18%, 82%);                       /* borders */
-  --onyx: hsl(210, 22%, 92%);                      /* chip / tag bg */
-  --eerie-black-1: hsl(0, 0%, 100%);               /* card inner */
-  --eerie-black-2: hsl(0, 0%, 100%);               /* card outer */
-  --smoky-black: hsl(210, 22%, 93%);               /* page bg — cooler & darker so cards stand off */
-  --white-1: hsl(214, 32%, 11%);                   /* primary text — near-black, slightly cool */
-  --white-2: hsl(214, 28%, 15%);                   /* secondary text */
-  --orange-yellow-crayola: hsl(32, 82%, 38%);      /* accent — passes AA on white */
-  --vegas-gold: hsl(32, 60%, 34%);
-  --light-gray: hsl(214, 18%, 22%);                /* body text */
-  --light-gray-70: hsla(214, 16%, 26%, 0.88);      /* muted — bumped from .75 for legibility */
-  --bittersweet-shimmer: hsl(0, 58%, 42%);
+  --jet: #E0E0DC;                                  /* borders */
+  --onyx: #E5E5E1;                                 /* chip / tag bg */
+  --eerie-black-1: #EFEFEC;                        /* card inner */
+  --eerie-black-2: #EFEFEC;                        /* card outer */
+  --smoky-black: #F8F8F6;                          /* page bg */
+  --white-1: #0A0A08;                              /* primary text — near-black */
+  --white-2: #0A0A08;                              /* secondary text */
+  --orange-yellow-crayola: #FF5F40;                /* accent */
+  --vegas-gold: #3D3D3A;
+  --light-gray: #3D3D3A;                           /* body text */
+  --light-gray-70: hsla(60, 3%, 45%, 0.95);        /* muted body text */
+  --bittersweet-shimmer: #E54E30;
+  --accent-light: #FAE8E4;                         /* tinted hover surface */
+  --accent-hover: #E54E30;                         /* accent-hover (light mode is darker) */
 
   /* shadows — two-layer (close key + soft ambient) for natural lift */
-  --shadow-1: 0 1px 2px hsla(214, 30%, 22%, 0.06),
-              0 6px 16px hsla(214, 30%, 22%, 0.08);
-  --shadow-2: 0 2px 4px hsla(214, 30%, 22%, 0.05),
-              0 12px 28px hsla(214, 30%, 22%, 0.09);
-  --shadow-3: 0 3px 6px hsla(214, 30%, 22%, 0.05),
-              0 16px 36px hsla(214, 30%, 22%, 0.1);
-  --shadow-4: 0 4px 10px hsla(214, 30%, 22%, 0.05),
-              0 24px 50px hsla(214, 30%, 22%, 0.08);
-  --shadow-5: 0 6px 14px hsla(214, 30%, 22%, 0.06),
-              0 28px 64px hsla(214, 30%, 22%, 0.1);
+  --shadow-1: 0 1px 2px hsla(60, 5%, 20%, 0.06),
+              0 6px 16px hsla(60, 5%, 20%, 0.08);
+  --shadow-2: 0 2px 4px hsla(60, 5%, 20%, 0.05),
+              0 12px 28px hsla(60, 5%, 20%, 0.09);
+  --shadow-3: 0 3px 6px hsla(60, 5%, 20%, 0.05),
+              0 16px 36px hsla(60, 5%, 20%, 0.1);
+  --shadow-4: 0 4px 10px hsla(60, 5%, 20%, 0.05),
+              0 24px 50px hsla(60, 5%, 20%, 0.08);
+  --shadow-5: 0 6px 14px hsla(60, 5%, 20%, 0.06),
+              0 28px 64px hsla(60, 5%, 20%, 0.1);
 }
 
 /* light-mode-only fixes for elements that assume a dark canvas */
@@ -187,7 +145,7 @@
 
 .theme-light ::selection {
   background: var(--orange-yellow-crayola);
-  color: hsl(0, 0%, 100%);
+  color: #0A0A08;
 }
 
 .theme-light::-webkit-scrollbar-track {
@@ -250,7 +208,7 @@ input, textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+  color: #0A0A08;
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
@@ -382,7 +340,12 @@ article.active {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   cursor: pointer;
+  transition: background var(--transition-1);
   z-index: 1;
+}
+
+.content-card:hover {
+  background: var(--orange-yellow-crayola);
 }
 
 .content-card::before {
@@ -518,8 +481,11 @@ main {
 }
 
 .contact-title {
-  color: var(--light-gray-70);
+  color: var(--orange-yellow-crayola);
+  font-family: var(--ff-mono);
   font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
@@ -527,7 +493,10 @@ main {
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
   font-size: var(--fs-7);
+  transition: color var(--transition-1);
 }
+
+.contact-info .contact-link:hover { color: var(--orange-yellow-crayola); }
 
 .contact-info address { font-style: normal; }
 
@@ -546,7 +515,7 @@ main {
 }
 
 
-.social-item .social-link:hover { color: var(--light-gray); }
+.social-item .social-link:hover { color: var(--orange-yellow-crayola); }
 
 
 
@@ -561,7 +530,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: rgba(20, 20, 18, 0.78);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -581,11 +550,15 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-8);
   padding: 20px 7px;
-  transition: color var(--transition-1);
+  border-radius: 8px;
+  transition: color var(--transition-1), background-color var(--transition-1);
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+.navbar-link:focus {
+  color: var(--orange-yellow-crayola);
+  background-color: var(--accent-light);
+}
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
@@ -625,7 +598,7 @@ main {
 }
 
 .theme-light .navbar {
-  background: hsla(210, 30%, 99%, 0.85);
+  background: rgba(248, 248, 246, 0.85);
   border-color: var(--jet);
   box-shadow: var(--shadow-2);
 }
@@ -671,7 +644,12 @@ main {
   padding: 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
+  transition: background var(--transition-1);
   z-index: 1;
+}
+
+.service-item:hover {
+  background: var(--orange-yellow-crayola);
 }
 
 .service-item::before {
@@ -1073,7 +1051,10 @@ main {
   border-radius: 8px;
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.select-item button:hover {
+  background: var(--accent-light);
+  color: var(--orange-yellow-crayola);
+}
 
 .project-list {
   display: grid;
@@ -1187,7 +1168,7 @@ main {
 
 .blog-post-item{
   display: flex;
-  height: 200px;
+  min-height: 200px;
   margin-bottom: 18px;
 }
 
@@ -1211,8 +1192,11 @@ main {
   border-radius: 16px;
   z-index: 1;
   margin-bottom: 1%;
-  align-items: center;
+  align-items: stretch;
+  transition: background var(--transition-1);
 }
+
+.blog-post-item > a:hover { background: var(--orange-yellow-crayola); }
 
 .blog-post-item > a::before {
   content: "";
@@ -1237,27 +1221,34 @@ main {
   transition: var(--transition-1);
 } */
 .blog-banner-box {
-  width: 65%;
-  height: auto;
+  flex-shrink: 0;
+  width: 40%;
+  align-self: stretch;
   border-radius: 12px;
   overflow: hidden;
   border-style: solid;
-  /* border-style: dashed;  */
   border-width: 3px;
   border-color: var(--orange-yellow-crayola);
-
 }
 
 .blog-banner-box img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
+  display: block;
   transition: var(--transition-1);
 }
 
 .blog-post-item > a:hover .blog-banner-box img { transform: scale(1); }
 
-.blog-content { padding: 10px; width: fit-content;}
+.blog-content {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .paper-link {
   color: var(--orange-yellow-crayola);
@@ -1824,7 +1815,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     transition: var(--transition-1);
   }
 
-  .filter-item button:hover { color: var(--light-gray-70); }
+  .filter-item button:hover { color: var(--orange-yellow-crayola); }
 
   .filter-item button.active { color: var(--orange-yellow-crayola); }
 
@@ -1958,7 +1949,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * BLOG
    */
 
-  .blog-banner-box { height: 230px; }
+  .blog-banner-box { min-height: 230px; }
 
 }
 
