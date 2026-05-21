@@ -18,7 +18,7 @@
           (stored !== 'dark' && window.matchMedia &&
             window.matchMedia('(prefers-color-scheme: light)').matches);
         if (prefersLight) document.documentElement.classList.add('theme-light');
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 
@@ -37,7 +37,9 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -56,9 +58,17 @@
 
       <div class="sidebar-info">
 
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+            <clipPath id="avatarClip" clipPathUnits="objectBoundingBox">
+              <path d="M 0,0 L 1,0 L 1,0.6 A 0.5,0.4 0 0 1 0,0.6 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+
         <figure class="avatar-box">
           <span class="avatar-disc" aria-hidden="true"></span>
-          <img src="./assets/images/myProfile-cutout.png" alt="Junan XIE" width="80">
+          <img src="./assets/images/myProfile.png" alt="Junan XIE" width="80">
         </figure>
 
         <div class="info-content">
@@ -246,13 +256,19 @@
         <section class="about-text">
           <p>Hi there! I am Junan XIE, you can also call me Janus :)</p>
           <p>
-            I am a first-year PhD student in Internet of Things at <a href="https://www.hkust-gz.edu.cn/">The Hong Kong University of Science and Technology (Guangzhou)</a>,
+            I am a first-year PhD student at <a href="https://www.hkust-gz.edu.cn/">The Hong Kong
+              University of Science and Technology (Guangzhou)</a>,
             supervised by <a href="https://rachelfranz.com">Prof. Rachel Franz</a>.
-            I received my Master's degree in Computational Media and Arts from HKUST(GZ), supervised by <a href="https://www.mingmingfan.com/">Prof. Mingming Fan</a> and <a href="https://scholar.google.com/citations?user=XIM08ZwAAAAJ&hl=en">Prof. Xin Tong</a>,
-            and my Bachelor's degree in Computer Science from <a href="http://en.hitsz.edu.cn/">Harbin Institute of Technology, Shenzhen</a>.
+            I received my Master's degree also from HKUST(GZ), supervised by <a
+              href="https://www.mingmingfan.com/">Prof. Mingming Fan</a> and <a
+              href="https://scholar.google.com/citations?user=XIM08ZwAAAAJ&hl=en">Prof. Xin Tong</a>,
+            and my Bachelor's degree in Computer Science from <a href="http://en.hitsz.edu.cn/">Harbin Institute of
+              Technology, Shenzhen</a>.
           </p>
           <p>
-            My work revolves around designing novel assistive technologies to empower people with disabilities. Additionally, I am interested in leveraging AI techniques to adapt interactions to better meet users' personal preferences.
+            My work revolves around designing novel assistive technologies to empower people with disabilities.
+            Additionally, I am interested in leveraging AI techniques to adapt interactions to better meet users'
+            personal preferences.
           </p>
           <!-- <p style="color: #ffdb70;">
             <strong>
@@ -410,31 +426,33 @@
         </div>
 
 
-  
+
         <section class="blog-posts">
           <h3 class="h3 service-title" style="margin-bottom: 30px;">Publications</h3>
           <ul class="blog-posts-list">
 
             <!-- IJHCS 2026 -->
             <li class="blog-post-item">
-              <a href="https://www.sciencedirect.com/science/article/abs/pii/S1071581925002393" target="_blank" rel="noopener">
+              <a href="assets/paper/26IJHCS-LLM-BLV-Maps.pdf" rel="noopener">
 
                 <div class="blog-banner-box">
                   <!-- TODO: replace with dedicated paper figure when available -->
-                  <img src="./assets/images/paper-haptic.jpg" alt="2026_IJHCS" loading="lazy">
+                  <img src="./assets/images/paper-IJHCS26.png" alt="2026_IJHCS" loading="lazy">
                 </div>
 
 
                 <div class="blog-content">
 
-                  <h4 class="h4 blog-item-title">LLM-powered Assistant with Electrotactile Feedback to Assist Blind and Low Vision People with Maps and Routes Preview</h4>
+                  <h4 class="h4 blog-item-title">LLM-powered Assistant with Electrotactile Feedback to Assist Blind and
+                    Low Vision People with Maps and Routes Preview</h4>
 
                   <p class="blog-text">
                     Chutian Jiang#, Yinan Fan#, <strong>Junan Xie</strong>, Emily Kuang, Kaihao Zhang*, Mingming Fan*
                   </p>
 
                   <p class="blog-text" style="margin-top: 10px;">
-                    <i>International Journal of Human-Computer Studies (<strong>IJHCS 2026</strong>), Volume 207, 2026</i>
+                    <i>International Journal of Human-Computer Studies (<strong>IJHCS 2026</strong>), Volume 207,
+                      2026</i>
                   </p>
 
                 </div>
@@ -445,24 +463,27 @@
 
             <!-- ASSETS 2025 -->
             <li class="blog-post-item" style="margin-top: 8%;">
-              <a href="https://dl.acm.org/doi/full/10.1145/3663547.3746362" target="_blank" rel="noopener">
+              <a href="assets/paper/25AST.pdf" rel="noopener">
 
                 <div class="blog-banner-box">
                   <!-- TODO: replace with dedicated paper figure when available -->
-                  <img src="./assets/images/paper-llm-25CHI.jpg" alt="2025_ASSETS" loading="lazy">
+                  <img src="./assets/images/paper-AST25.png" alt="2025_ASSETS" loading="lazy">
                 </div>
 
 
                 <div class="blog-content">
 
-                  <h4 class="h4 blog-item-title">A11yShape: AI-Assisted 3-D Modeling for Blind and Low-Vision Programmers</h4>
+                  <h4 class="h4 blog-item-title">A11yShape: AI-Assisted 3-D Modeling for Blind and Low-Vision
+                    Programmers</h4>
 
                   <p class="blog-text">
-                    Zhuohao Zhang, Haichang Li, Chun Meng Yu, Faraz Faruqi, <strong>Junan Xie</strong>, Gene Kim, Mingming Fan, Angus Forbes, Jacob O. Wobbrock, Anhong Guo, Liang He
+                    Zhuohao Zhang, Haichang Li, Chun Meng Yu, Faraz Faruqi, <strong>Junan Xie</strong>, Gene Kim,
+                    Mingming Fan, Angus Forbes, Jacob O. Wobbrock, Anhong Guo, Liang He
                   </p>
 
                   <p class="blog-text" style="margin-top: 10px;">
-                    <i>Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (<strong>ASSETS'25</strong>)</i>
+                    <i>Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility
+                      (<strong>ASSETS'25</strong>)</i>
                   </p>
 
                 </div>
@@ -482,15 +503,18 @@
 
                 <div class="blog-content">
 
-                  <h4 class="h4 blog-item-title">Designing LLM-Powered Multimodal Instructions to Support Rich Hands-on Skills Remote Learning: A Case Study with Massage Instructors and Learners</h4>
+                  <h4 class="h4 blog-item-title">Designing LLM-Powered Multimodal Instructions to Support Rich Hands-on
+                    Skills Remote Learning: A Case Study with Massage Instructors and Learners</h4>
                   <!-- <h4 class="h4 blog-item-title">Let the Chart Spark: Model</h4> -->
 
                   <p class="blog-text">
-                    Chutian Jiang#, Yinan Fan#, <strong>Junan Xie</strong>, Emily Kuang, Baichuan Feng, Kaihao Zhang*, Mingming Fan*
+                    Chutian Jiang#, Yinan Fan#, <strong>Junan Xie</strong>, Emily Kuang, Baichuan Feng, Kaihao Zhang*,
+                    Mingming Fan*
                   </p>
 
                   <p class="blog-text" style="margin-top: 10px;">
-                    <i>Proceedings of the CHI Conference on Human Factors in Computing Systems (<strong>CHI'25</strong>), April 26 11--May 1, 2025, Yokohama, Japan </i> 
+                    <i>Proceedings of the CHI Conference on Human Factors in Computing Systems
+                      (<strong>CHI'25</strong>), April 26 11--May 1, 2025, Yokohama, Japan </i>
                   </p>
 
                   <!-- <div>
@@ -514,7 +538,8 @@
 
                 <div class="blog-content">
 
-                  <h4 class="h4 blog-item-title">Designing Unobtrusive Modulated Electrotactile Feedback on Fingertip Edge to Assist Blind and Low Vision (BLV) People in Comprehending Charts</h4>
+                  <h4 class="h4 blog-item-title">Designing Unobtrusive Modulated Electrotactile Feedback on Fingertip
+                    Edge to Assist Blind and Low Vision (BLV) People in Comprehending Charts</h4>
                   <!-- <h4 class="h4 blog-item-title">Let the Chart Spark: Model</h4> -->
 
                   <p class="blog-text">
@@ -522,7 +547,9 @@
                   </p>
 
                   <p class="blog-text" style="margin-top: 10px;">
-                    <i>Proceedings of the CHI Conference on Human Factors in Computing Systems (<strong>CHI'24</strong>), May 11--16, 2024, Honolulu, HI, USA </i> <strong>(🏆 Best Paper Honorable Mention Award)</strong>
+                    <i>Proceedings of the CHI Conference on Human Factors in Computing Systems
+                      (<strong>CHI'24</strong>), May 11--16, 2024, Honolulu, HI, USA </i> <strong>(🏆 Best Paper
+                      Honorable Mention Award)</strong>
                   </p>
 
                   <!-- <div>
@@ -542,25 +569,28 @@
                 <div class="blog-banner-box">
                   <img src="./assets/images/paper-VRupper.png" alt="2024_Haptic" loading="lazy">
                 </div>
-                
+
                 <div class="blog-content">
 
-                  <h4 class="h4 blog-item-title">Designing Upper-Body Gesture Interaction with and for People with Spinal Muscular Atrophy in VR</h4>
-    
+                  <h4 class="h4 blog-item-title">Designing Upper-Body Gesture Interaction with and for People with
+                    Spinal Muscular Atrophy in VR</h4>
+
                   <p class="blog-text">
-                    Jingze Tian#, Yingna Wang#, Keye Yu, Liyi Xu, <strong>Junan Xie</strong>, Franklin Mingzhe Li, Yafeng Niu, Mingming Fan*
+                    Jingze Tian#, Yingna Wang#, Keye Yu, Liyi Xu, <strong>Junan Xie</strong>, Franklin Mingzhe Li,
+                    Yafeng Niu, Mingming Fan*
                   </p>
-    
+
                   <p class="blog-text" style="margin-top: 10px;">
-                    <i>Proceedings of the CHI Conference on Human Factors in Computing Systems (<strong>CHI'24</strong>), May 11--16, 2024, Honolulu, HI, USA</i>
+                    <i>Proceedings of the CHI Conference on Human Factors in Computing Systems
+                      (<strong>CHI'24</strong>), May 11--16, 2024, Honolulu, HI, USA</i>
                   </p>
-    
+
                   <!-- <div>
                     <a class="pdf-button" href="assets/paper/24CHI-Haptic.pdf" target="_blank">PDF</a>
                   </div> -->
-    
+
                 </div>
-    
+
 
               </a>
 
@@ -671,7 +701,8 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">The Shenzhen Key Laboratory of Internet Information Collaboration @HITSZ</h4>
+              <h4 class="h4 timeline-item-title">The Shenzhen Key Laboratory of Internet Information Collaboration
+                @HITSZ</h4>
 
               <span>2022.10 — 2023.04</span>
 
