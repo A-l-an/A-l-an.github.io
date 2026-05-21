@@ -177,7 +177,7 @@
 
 .theme-light ::selection {
   background: var(--orange-yellow-crayola);
-  color: #0A0A08;
+  color: #FFFFFF;
 }
 
 .theme-light::-webkit-scrollbar-track {
@@ -253,7 +253,7 @@ textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: #0A0A08;
+  color: #000000;
 }
 
 :focus {
@@ -667,6 +667,106 @@ main {
 .tag:hover {
   color: var(--orange-yellow-crayola);
   border-color: var(--orange-yellow-crayola);
+}
+
+
+
+/*-----------------------------------*\
+  #NEWS
+\*-----------------------------------*/
+
+.news-aside {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow-1);
+  margin-bottom: 15px;
+  z-index: 1;
+}
+
+.news-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.news-title {
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  letter-spacing: -0.25px;
+}
+
+.news-list {
+  list-style: none;
+  max-height: 380px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.news-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.news-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+  background: var(--jet);
+  border-radius: 5px;
+}
+
+.news-list::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-yellow-crayola);
+}
+
+.news-item {
+  position: relative;
+  padding-left: 14px;
+  font-size: var(--fs-6);
+  line-height: 1.55;
+}
+
+.news-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--orange-yellow-crayola);
+}
+
+.news-date {
+  display: inline-block;
+  color: var(--orange-yellow-crayola);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  letter-spacing: 0.04em;
+  margin-right: 6px;
+}
+
+.news-text {
+  display: inline;
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.55;
+}
+
+.news-text strong {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
 }
 
 
@@ -2071,6 +2171,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
+  .news-aside,
   article {
     width: 700px;
   }
@@ -2211,9 +2312,14 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
+  .news-aside,
   article {
     width: 950px;
     box-shadow: var(--shadow-5);
+  }
+
+  .news-aside {
+    margin-inline: auto;
   }
 
 
@@ -2351,6 +2457,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
+  .news-aside,
   article {
     width: auto;
   }
@@ -2370,12 +2477,42 @@ textarea.form-input::-webkit-resizer {
     margin-inline: auto;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 25px;
   }
 
+  .sidebar-column {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: sticky;
+    top: 60px;
+    align-self: flex-start;
+    max-height: calc(100vh - 80px);
+  }
+
+  .news-aside {
+    width: auto;
+    margin-inline: 0;
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .news-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+  }
+
   .main-content {
-    min-width: 75%;
+    min-width: 0;
     width: 75%;
     margin: 0;
   }
@@ -2387,28 +2524,14 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar {
-    position: sticky;
-    top: 60px;
-    max-height: calc(100vh - 80px);
+    position: static;
+    max-height: none;
     height: max-content;
     margin-bottom: 0;
     padding-top: 60px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    overflow: visible;
+    flex-shrink: 0;
     z-index: 1;
-  }
-
-  .sidebar::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .sidebar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .sidebar::-webkit-scrollbar-thumb {
-    background: var(--jet);
-    border-radius: 3px;
   }
 
   .sidebar-info {
@@ -2418,8 +2541,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
   }
 
   .avatar-box img {

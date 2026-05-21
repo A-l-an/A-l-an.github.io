@@ -54,72 +54,75 @@
       - #SIDEBAR
     -->
 
-    <aside class="sidebar" data-sidebar>
+    <div class="sidebar-column">
 
-      <div class="sidebar-info">
+      <aside class="sidebar" data-sidebar>
 
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-          <defs>
-            <clipPath id="avatarClip" clipPathUnits="objectBoundingBox">
-              <path d="M 0,0 L 1,0 L 1,0.6 A 0.5,0.4 0 0 1 0,0.6 Z" />
-            </clipPath>
-          </defs>
-        </svg>
+        <div class="sidebar-info">
 
-        <figure class="avatar-box">
-          <span class="avatar-disc" aria-hidden="true"></span>
-          <img src="./assets/images/myProfile.png" alt="Junan XIE" width="80">
-        </figure>
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <defs>
+              <clipPath id="avatarClip" clipPathUnits="objectBoundingBox">
+                <path d="M 0,0 L 1,0 L 1,0.6 A 0.5,0.4 0 0 1 0,0.6 Z" />
+              </clipPath>
+            </defs>
+          </svg>
 
-        <div class="info-content">
-          <h1 class="name" title="Junan XIE">Junan <span class="name-accent">XIE</span></h1>
+          <figure class="avatar-box">
+            <span class="avatar-disc" aria-hidden="true"></span>
+            <img src="./assets/images/myProfile.png" alt="Junan XIE" width="80">
+          </figure>
 
-          <p class="title">PhD Student</p>
+          <div class="info-content">
+            <h1 class="name" title="Junan XIE">Junan <span class="name-accent">XIE</span></h1>
+
+            <p class="title">PhD Student</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <div class="sidebar-info_more">
 
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+          <div class="separator"></div>
 
-      </div>
+          <ul class="contacts-list">
 
-      <div class="sidebar-info_more">
+            <li class="contact-item">
 
-        <div class="separator"></div>
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
 
-        <ul class="contacts-list">
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
 
-          <li class="contact-item">
+                <a href="mailto:jxie622@connect.hkust-gz.edu.cn"
+                  class="contact-link">jxie622@connect.hkust-gz.edu.cn</a>
+              </div>
 
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
+            </li>
 
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
+            <li class="contact-item">
 
-              <a href="mailto:jxie622@connect.hkust-gz.edu.cn" class="contact-link">jxie622@connect.hkust-gz.edu.cn</a>
-            </div>
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
 
-          </li>
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
 
-          <li class="contact-item">
+                <a href="tel:+17677566995" class="contact-link">+86 17677566995</a>
+              </div>
 
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
+            </li>
 
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+17677566995" class="contact-link">+86 17677566995</a>
-            </div>
-
-          </li>
-
-          <!-- <li class="contact-item">
+            <!-- <li class="contact-item">
 
             <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
@@ -133,47 +136,47 @@
 
           </li> -->
 
-          <li class="contact-item">
+            <li class="contact-item">
 
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
 
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
 
-              <address>Guangzhou, Guangdong, China</address>
-            </div>
+                <address>Guangzhou, Guangdong, China</address>
+              </div>
 
-          </li>
+            </li>
 
-        </ul>
+          </ul>
 
-        <div class="separator"></div>
+          <div class="separator"></div>
 
-        <ul class="social-list">
+          <ul class="social-list">
 
-          <li class="social-item">
-            <a href="mailto:jxie622@connect.hkust-gz.edu.cn" class="social-link">
-              <ion-icon name="mail-outline"></ion-icon>
-            </a>
-          </li>
+            <li class="social-item">
+              <a href="mailto:jxie622@connect.hkust-gz.edu.cn" class="social-link">
+                <ion-icon name="mail-outline"></ion-icon>
+              </a>
+            </li>
 
-          <li class="social-item">
-            <a href="https://twitter.com/JunanXie83741" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
+            <li class="social-item">
+              <a href="https://twitter.com/JunanXie83741" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
 
-          <li class="social-item">
-            <a href="https://github.com/A-l-an" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
+            <li class="social-item">
+              <a href="https://github.com/A-l-an" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
 
-        </ul>
+          </ul>
 
-        <!-- <div class="separator"></div>
+          <!-- <div class="separator"></div>
 
         <section class="sidebar-panel">
           <p class="panel-label">Research Interests</p>
@@ -185,12 +188,106 @@
           </ul>
         </section> -->
 
-      </div>
+        </div>
 
-    </aside>
+      </aside>
 
 
+      <!--
+      - #NEWS
+    -->
 
+      <aside class="news-aside" data-news>
+
+        <header class="news-header">
+          <h3 class="h3 news-title">News</h3>
+        </header>
+
+        <ul class="news-list">
+
+          <li class="news-item">
+            <span class="news-date">2026/01</span>
+            <p class="news-text">
+              🎉 Our paper on LLM-powered electrotactile assistant for blind and low-vision users to preview maps and
+              routes is accepted to <strong>IJHCS 2026</strong>!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2025/09</span>
+            <p class="news-text">
+              🎓 Started my PhD journey at <strong>HKUST(GZ)</strong>, advised by Prof. Rachel Franz. Excited for what
+              comes next!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2025/07</span>
+            <p class="news-text">
+              🎉 Our paper <strong>A11yShape</strong> on AI-assisted 3-D modeling for blind and low-vision programmers
+              is accepted to <strong>ASSETS'25</strong>!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2025/06</span>
+            <p class="news-text">
+              🎓 Graduated with my Master's degree from HKUST(GZ). Grateful to Prof. Mingming Fan and Prof. Xin Tong for
+              two wonderful years!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2025/04</span>
+            <p class="news-text">
+              ✈️ Attended <strong>CHI 2025</strong> in Yokohama, Japan — sushi, springtime, and lots of inspiring talks!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2024/12</span>
+            <p class="news-text">
+              🎉 Our paper on LLM-powered multimodal instructions for hands-on remote learning is accepted to
+              <strong>CHI'25</strong>!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2024/05</span>
+            <p class="news-text">
+              🏆 Our CHI'24 paper on electrotactile feedback for BLV users received the <strong>Best Paper Honorable
+                Mention</strong> at Honolulu!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2023/12</span>
+            <p class="news-text">
+              🎉 Two papers accepted to <strong>CHI 2024</strong> — my first CHI papers!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2023/09</span>
+            <p class="news-text">
+              🌱 Started my Master's at HKUST(GZ), advised by Prof. Mingming Fan and Prof. Xin Tong. Moving from
+              Shenzhen to Guangzhou!
+            </p>
+          </li>
+
+          <li class="news-item">
+            <span class="news-date">2023/06</span>
+            <p class="news-text">
+              🎓 Graduated with my Bachelor's in Computer Science from <strong>HITSZ</strong>. Thanks Prof. Yunming Ye
+              for the guidance!
+            </p>
+          </li>
+
+        </ul>
+
+      </aside>
+
+    </div>
 
 
     <!--
