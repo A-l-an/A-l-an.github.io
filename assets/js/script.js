@@ -126,19 +126,8 @@ const storedTheme = (function () {
   }
 })();
 
-const prefersLightQuery = window.matchMedia("(prefers-color-scheme: light)");
-const getSystemTheme = function () {
-  return prefersLightQuery.matches ? "light" : "dark";
-};
-
 const userChoseTheme = storedTheme === "light" || storedTheme === "dark";
-setTheme(userChoseTheme ? storedTheme : getSystemTheme(), false);
-
-if (!userChoseTheme && prefersLightQuery.addEventListener) {
-  prefersLightQuery.addEventListener("change", function () {
-    setTheme(getSystemTheme(), false);
-  });
-}
+setTheme(userChoseTheme ? storedTheme : "dark", false);
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", function () {
