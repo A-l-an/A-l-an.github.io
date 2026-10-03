@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Junan XIE</title>
 
   <!--
@@ -78,7 +78,8 @@
             <p class="title">PhD Student</p>
           </div>
 
-          <button class="info_more-btn" data-sidebar-btn>
+          <button class="info_more-btn" data-sidebar-btn aria-label="Show contacts" aria-expanded="false"
+            aria-controls="sidebar-contacts">
             <span>Show Contacts</span>
 
             <ion-icon name="chevron-down"></ion-icon>
@@ -86,7 +87,7 @@
 
         </div>
 
-        <div class="sidebar-info_more">
+        <div class="sidebar-info_more" id="sidebar-contacts">
 
           <div class="separator"></div>
 
@@ -192,104 +193,7 @@
       </aside>
 
 
-      <!--
-      - #NEWS
-    -->
 
-      <aside class="news-aside" data-news>
-
-        <header class="news-header">
-          <h3 class="h3 news-title">News</h3>
-        </header>
-
-        <ul class="news-list">
-
-          <li class="news-item">
-            <span class="news-date">2026/07</span>
-            <p class="news-text">
-              🎉 Thrilled to have my paper accepted to <strong>IMWUT 2026</strong> — more details coming soon!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2026/01</span>
-            <p class="news-text">
-              🎉 One paper is accepted to <strong>IJHCS 2026</strong> — congrats to all collaborators!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2025/09</span>
-            <p class="news-text">
-              🎓 Started my PhD journey at <strong>HKUST(GZ)</strong>, advised by Prof. Rachel Franz and Prof. Hui
-              Xiong. Excited for what comes next!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2025/07</span>
-            <p class="news-text">
-              🎉 Our paper <strong>A11yShape</strong> is accepted to <strong>ASSETS'25</strong> — congrats to all
-              collaborators!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2025/06</span>
-            <p class="news-text">
-              🎓 Graduated with my Master's degree from HKUST(GZ). Grateful to Prof. Mingming Fan and Prof. Xin Tong for
-              two wonderful years!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2025/04</span>
-            <p class="news-text">
-              ✈️ Attended <strong>CHI 2025</strong> in Yokohama, Japan — sushi, springtime, and lots of inspiring talks!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2024/12</span>
-            <p class="news-text">
-              🎉 One of our papers is accepted to <strong>CHI'25</strong> — congrats to all collaborators!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2024/05</span>
-            <p class="news-text">
-              🏆 Our CHI'24 paper on electrotactile feedback for BLV users received the <strong>Best Paper Honorable
-                Mention</strong> at Honolulu!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2023/12</span>
-            <p class="news-text">
-              🎉 Two papers accepted to <strong>CHI 2024</strong> — my first CHI papers!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2023/09</span>
-            <p class="news-text">
-              🌱 Started my Master's at HKUST(GZ), advised by Prof. Mingming Fan and Prof. Xin Tong. Moving from
-              Shenzhen to Guangzhou!
-            </p>
-          </li>
-
-          <li class="news-item">
-            <span class="news-date">2023/06</span>
-            <p class="news-text">
-              🎓 Graduated with my Bachelor's in Computer Science from <strong>HITSZ</strong>. Thanks Prof. Yunming Ye
-              for the guidance!
-            </p>
-          </li>
-
-        </ul>
-
-      </aside>
 
     </div>
 
@@ -353,6 +257,40 @@
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
+
+        <!-- Session details last verified 2026-10-04 against the official UbiComp/ISWC program.
+          11:00–12:30 is the full session; an individual FocalFlow talk time is not published. -->
+        <section class="conference-spotlight" id="focalflow" aria-labelledby="focalflow-heading" tabindex="-1">
+          <div class="conference-overview">
+            <h2 id="focalflow-heading">FocalFlow</h2>
+            <p class="conference-event">at UbiComp/ISWC 2026</p>
+            <p class="conference-summary">Helping blind and low vision people make choices on their phones.</p>
+          </div>
+
+          <div class="conference-schedule" aria-label="Conference session details">
+            <p class="conference-date"><time datetime="2026-10-15">Thu 15 Oct 2026</time></p>
+            <p><strong>Session F3 · 11:00–12:30</strong> <span class="conference-timezone">Shanghai time</span></p>
+            <p class="conference-session">Computing for diverse communities</p>
+            <p class="conference-place"><strong>Pearl Hall (7F)</strong><br>Shanghai International Convention Center</p>
+          </div>
+
+          <div class="conference-actions">
+            <a class="conference-link conference-link-primary" href="https://doi.org/10.1145/3831982">Read paper</a>
+            <a class="conference-link" href="https://ubicomp.org/ubicomp-iswc-2026/accepted-papers/#session-F3">View session</a>
+          </div>
+
+          <details class="conference-details">
+            <summary>How FocalFlow works</summary>
+            <p>For tasks like booking a hospital appointment, FocalFlow shows the options that matter and offers more
+              details when needed. The user stays in control of the decision.</p>
+            <a class="conference-figure" href="./assets/images/paper-focalflow-2026.png"
+              aria-label="Open the full FocalFlow overview image">
+              <img src="./assets/images/paper-focalflow-2026.png" width="1564" height="592" loading="lazy"
+                alt="FocalFlow: a task overview, relevant decision options, and details on demand.">
+              <span>Open full image</span>
+            </a>
+          </details>
+        </section>
 
         <section class="about-text">
           <p>Hi there! I am Junan XIE, you can also call me Janus :)</p>
@@ -1418,6 +1356,105 @@
       </article>
 
     </div>
+
+    <!--
+    - #NEWS
+  -->
+
+    <aside class="news-aside" data-news>
+
+      <header class="news-header">
+        <h3 class="h3 news-title">News</h3>
+      </header>
+
+      <ul class="news-list">
+
+        <li class="news-item">
+          <span class="news-date">2026/09</span>
+          <p class="news-text">
+            <strong>FocalFlow</strong> is published in <strong>IMWUT 2026</strong>.
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2026/01</span>
+          <p class="news-text">
+            🎉 One paper is accepted to <strong>IJHCS 2026</strong> — congrats to all collaborators!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2025/09</span>
+          <p class="news-text">
+            🎓 Started my PhD journey at <strong>HKUST(GZ)</strong>, advised by Prof. Rachel Franz and Prof. Hui
+            Xiong. Excited for what comes next!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2025/07</span>
+          <p class="news-text">
+            🎉 Our paper <strong>A11yShape</strong> is accepted to <strong>ASSETS'25</strong> — congrats to all
+            collaborators!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2025/06</span>
+          <p class="news-text">
+            🎓 Graduated with my Master's degree from HKUST(GZ). Grateful to Prof. Mingming Fan and Prof. Xin Tong for
+            two wonderful years!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2025/04</span>
+          <p class="news-text">
+            ✈️ Attended <strong>CHI 2025</strong> in Yokohama, Japan — sushi, springtime, and lots of inspiring talks!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2024/12</span>
+          <p class="news-text">
+            🎉 One of our papers is accepted to <strong>CHI'25</strong> — congrats to all collaborators!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2024/05</span>
+          <p class="news-text">
+            🏆 Our CHI'24 paper on electrotactile feedback for BLV users received the <strong>Best Paper Honorable
+              Mention</strong> at Honolulu!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2023/12</span>
+          <p class="news-text">
+            🎉 Two papers accepted to <strong>CHI 2024</strong> — my first CHI papers!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2023/09</span>
+          <p class="news-text">
+            🌱 Started my Master's at HKUST(GZ), advised by Prof. Mingming Fan and Prof. Xin Tong. Moving from
+            Shenzhen to Guangzhou!
+          </p>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">2023/06</span>
+          <p class="news-text">
+            🎓 Graduated with my Bachelor's in Computer Science from <strong>HITSZ</strong>. Thanks Prof. Yunming Ye
+            for the guidance!
+          </p>
+        </li>
+
+      </ul>
+
+    </aside>
 
   </main>
 
