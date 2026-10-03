@@ -1570,6 +1570,18 @@ main {
   transform: scale(1);
 }
 
+.focalflow-banner {
+  background: #fff;
+}
+
+.focalflow-banner img {
+  object-fit: contain;
+}
+
+.publication-venue {
+  margin-top: 10px;
+}
+
 .blog-content {
   flex: 1;
   min-width: 0;
