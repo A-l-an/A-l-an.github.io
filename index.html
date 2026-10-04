@@ -29,7 +29,7 @@
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261004-2">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261004-3">
 
   <!--
     - google font link
@@ -269,21 +269,26 @@
           </header>
 
           <div class="conference-overview">
-            <ul class="conference-highlights">
-              <li>Understand the next decision.</li>
-              <li>Focus on task-relevant options.</li>
-              <li>Explore details before choosing.</li>
+            <ul class="conference-keywords" aria-label="Research directions">
+              <li>Mobile GUI Agents</li>
+              <li>Decision-Making</li>
+              <li>Non-visual Interaction</li>
+              <li>Adaptive Interfaces</li>
             </ul>
-            <p class="conference-summary">Booking an appointment means choosing a department, a doctor and a time.
-              A screen reader reads useful and irrelevant items together. FocalFlow uses AI to organise these choices
-              around your task, reveal details when needed and keep you in control.</p>
           </div>
 
           <div class="conference-schedule" aria-label="Conference session details">
-            <p class="conference-talk"><strong>Approx. 11:45</strong><span>Estimated</span></p>
-            <p class="conference-place"><time datetime="2026-10-15">Thu 15 Oct 2026</time><span>Pearl Hall (7F)</span></p>
-            <p class="conference-session">Full session: 11:00–12:30 · 90 min</p>
-            <p class="conference-estimate">Listed 4th of 6; estimate assumes equal 15-min slots. Timing may shift.</p>
+            <dl>
+              <div class="conference-talk">
+                <dt>My talk · estimated start</dt>
+                <dd><time datetime="2026-10-15T11:45:00+08:00">Thu 15 Oct · 11:45</time></dd>
+              </div>
+              <div class="conference-room">
+                <dt>Room</dt>
+                <dd>Pearl Hall (7F)</dd>
+              </div>
+            </dl>
+            <p class="conference-session">Full session: 11:00–12:30 (90 min)</p>
           </div>
 
           <div class="conference-actions">
@@ -292,13 +297,30 @@
           </div>
 
           <details class="conference-details">
-            <summary>View system diagram</summary>
-            <a class="conference-figure" href="./assets/images/paper-focalflow-2026.png"
-              aria-label="Open the full FocalFlow overview image">
-              <img src="./assets/images/paper-focalflow-2026.png" width="1564" height="592" loading="lazy"
-                alt="FocalFlow: a task overview, relevant decision options, and details on demand.">
-              <span>Open full image</span>
-            </a>
+            <summary>About the project</summary>
+            <section class="conference-explanation">
+              <h3>Why it matters</h3>
+              <p>Mobile tasks involve several decisions across different screens. For blind and low vision users,
+                screen readers turn a structured interface into a long sequence of spoken items. Relevant choices are
+                mixed with unrelated content, while details needed for comparison are scattered. This creates extra
+                mental effort and can lead people to miss information that matters to their decision.</p>
+            </section>
+            <section class="conference-explanation">
+              <h3>How FocalFlow helps</h3>
+              <p>FocalFlow uses LLM agents to organise interface information around the user’s current task. It provides
+                a task overview, filters the screen reader’s focus to relevant options without moving their positions,
+                and reveals supporting details when the user asks. This helps users keep track of the task and explore
+                alternatives while retaining control over the final choice.</p>
+            </section>
+            <figure class="conference-figure">
+              <a href="./assets/images/paper-focalflow-focus.png" aria-label="Open the full paper illustration">
+                <img src="./assets/images/paper-focalflow-focus.png" width="1600" height="956" loading="lazy"
+                  alt="Paper illustration: selectable options highlighted in purple, supporting details in blue, and unrelated interface content in grey.">
+              </a>
+              <figcaption>From the paper: purple marks decision options; blue marks information that helps evaluate
+                them. FocalFlow adapts the screen reader’s focus while keeping the interface in place.</figcaption>
+              <a class="conference-image-link" href="./assets/images/paper-focalflow-focus.png">Open full image</a>
+            </figure>
           </details>
         </section>
 

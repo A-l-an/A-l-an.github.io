@@ -894,23 +894,19 @@ main {
   line-height: 1.45;
 }
 
-.conference-highlights {
+.conference-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
   margin-top: 12px;
-  padding-left: 18px;
   font-size: 14px;
   line-height: 1.45;
 }
 
-.conference-highlights li {
-  list-style: disc;
-}
-
-.conference-summary {
-  max-width: 70ch;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: var(--fw-400);
-  line-height: 1.45;
+.conference-keywords li {
+  padding: 4px 8px;
+  border: 1px solid var(--jet);
+  border-radius: 4px;
 }
 
 .conference-schedule {
@@ -921,32 +917,28 @@ main {
   line-height: 1.45;
 }
 
-.conference-talk {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 10px;
-  margin-bottom: 4px;
+.conference-talk dt {
+  margin-bottom: 2px;
 }
 
-.conference-talk strong {
+.conference-talk dd {
   font-size: 16px;
   font-weight: var(--fw-600);
 }
 
-.conference-place {
+.conference-room {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 12px;
+  gap: 2px 8px;
+  margin-top: 8px;
+}
+
+.conference-room dd {
   font-weight: var(--fw-500);
 }
 
 .conference-session {
-  margin-top: 4px;
-}
-
-.conference-estimate {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .conference-actions {
@@ -997,6 +989,18 @@ main {
   margin-bottom: 8px;
 }
 
+.conference-explanation {
+  max-width: 70ch;
+  margin-top: 16px;
+  line-height: 1.55;
+}
+
+.conference-explanation h3 {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: var(--fw-600);
+}
+
 .conference-figure {
   display: block;
   margin-top: 16px;
@@ -1010,10 +1014,16 @@ main {
   object-fit: contain;
 }
 
-.conference-figure span {
+.conference-figure figcaption {
+  margin-top: 8px;
+  line-height: 1.55;
+}
+
+.conference-image-link {
   display: flex;
   min-height: 44px;
   align-items: center;
+  color: var(--white-2);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

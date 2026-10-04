@@ -1,6 +1,6 @@
 # Homepage preview and validation
 
-Updated 2026-10-04 for the FocalFlow publication and UbiComp/ISWC conference highlight.
+Updated 2026-10-04 for the FocalFlow publication and conference highlight.
 
 ## Previews
 
@@ -9,29 +9,31 @@ Updated 2026-10-04 for the FocalFlow publication and UbiComp/ISWC conference hig
 | 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
 | 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
 
-The after screenshots show settled page states in the Codex in-app browser after the compact-card refinement.
+[Expanded project explanation and paper figure](mobile-expanded.png) is a capture of the complete open disclosure at mobile width. Current screenshots come from the Codex in-app browser.
 
-## Local checks
+## Current content
 
-Preview from the repository root with `python3 -m http.server 4000`, then visit `http://localhost:4000/` or `http://localhost:4000/#focalflow`.
+- The full paper title is followed by research-direction keywords: Mobile GUI Agents, Decision-Making, Non-visual Interaction and Adaptive Interfaces.
+- The native About the project disclosure starts closed. It explains the decision-making problem and the system's approach, then shows an excerpt from the paper's highlighted interface illustration.
+- The talk block labels 11:45 once as the estimated start, with date and room separately associated. The full session window remains secondary.
+- Publication metadata, the original publication figure, and Research Interests remain unchanged.
 
-- Chrome checks at 320, 390, 768, 844, 1024, 1249, 1250 and 1440 CSS pixels: no horizontal page overflow or JavaScript page errors; About, Resume and Contact navigation works.
-- Sidebar expansion and collapse, light/dark switching and reload persistence checked. Resizing across the desktop breakpoint preserves exactly one News section in the appropriate reading order.
-- Keyboard operation of the native details disclosure, conference anchor focus, and new controls' minimum 44 px height checked. The mobile conference content also remains visible with JavaScript disabled.
-- FocalFlow's complete 1564 × 592 image loads without cropping. Mobile publication cards stack the image above the text.
-- Contact form validity checked without submitting. JavaScript syntax and `git diff --check` pass.
+## Verification
 
-These checks use local Chrome with simulated viewport sizes. They do not establish physical iPhone/Android behavior, live GitHub Pages deployment, or contact-form delivery. Nine pre-existing missing images in the hidden Portfolio page remain outside this change. The design detector ran in degraded regex mode because its optional HTML parser dependencies were unavailable; it does not verify computed contrast.
+- In-app browser checks at 320, 390, 768 and 1440 CSS pixels: no horizontal overflow with the explanation expanded; all four keywords and the full title retained. Mobile title 16 px, larger-screen title 20 px, body 14 px.
+- Native disclosure opened by click and closed by Enter. Paper/session links and disclosure retain 44 px minimum height. The new 1600 × 956 illustration loads and fits the disclosure without clipping.
+- Dark and light phone/desktop views checked. Exactly one estimated-start label is visible; the previous action slogans, Booking introduction and duplicate Approx./Estimated display are absent.
+- Independent source/content/image review passed. The current change leaves all content after the conference panel, JavaScript and the original publication image unchanged.
+- Earlier Chrome checks covered navigation, sidebar, form validity without submission, direct-link focus and theme persistence at 320–1440 px. This refinement does not change their JavaScript. `git diff --check` passes.
 
-## Compact-card refinement
+Checks cover local browser rendering and simulated viewport sizes, not physical phones, screen-reader use, live GitHub Pages deployment or form delivery. Nine pre-existing missing images in hidden Portfolio content remain outside this change. The earlier design detector ran in degraded regex mode, so its output is not a computed-contrast certification.
 
-- In-app browser checks at 320, 390, 768 and 1440 CSS pixels: full title present, three decision-making bullets and the brief introduction visible, no horizontal overflow. Computed title size is 16 px on phones and 20 px at larger widths; body text is 14 px. Both action links and the diagram disclosure retain 44 px targets.
-- Dark and light phone/desktop views checked. Publication and research-interest content remains identical to the previous version. An independent source review found no actionable issues.
-- `Approx. 11:45` is an estimate, not an announced talk time. The official list places FocalFlow fourth among six papers in a 90-minute session. Assuming equal 15-minute slots gives 11:00 + 3 × 15 minutes = 11:45. The page states the assumption and that timing may shift.
-- The CSS URL includes a version query because the in-app browser retained the previous stylesheet even after a normal reload. The new computed sizes were verified after the version change.
+For a fresh local preview, run `python3 -m http.server 4000` from the repository root and visit `http://localhost:4000/`. The stylesheet URL includes a revision query because the in-app browser retained an older stylesheet through ordinary reloads.
 
-## Content sources
+## Sources and estimate
 
 - [Crossref publication metadata](https://api.crossref.org/works/10.1145/3831982): official title, six authors, IMWUT 10(3), September 2026.
-- [Official Session F3 program](https://ubicomp.org/ubicomp-iswc-2026/accepted-papers/#session-F3): Thursday, 15 October 2026, 11:00–12:30, Pearl Hall (7F). This is the session window; the exact FocalFlow presentation start time is not published. Schedule checked 2026-10-04.
-- The paper illustration was supplied by the site owner and is retained intact.
+- [Official Session F3 program](https://ubicomp.org/ubicomp-iswc-2026/accepted-papers/#session-F3): Thursday, 15 October 2026, 11:00–12:30, Pearl Hall (7F); FocalFlow is listed fourth of six papers. Checked 2026-10-04.
+- Estimated talk start: 11:00 + (4 − 1) × (90 minutes / 6 papers) = 11:45. This assumes the published order and equal 15-minute slots. An individual start time has not been announced, and actual order/durations can vary. The UI labels this as an estimate rather than an official time.
+- Project explanation: the owner's FocalFlow manuscript Introduction (pp. 2–3) and system section. The manuscript describes server-side LLM agents with an Android client, so the keywords do not claim fully on-device inference.
+- Highlighted figure: Figure 4 from the owner's manuscript, page 12. The original embedded RGB image is 3030 × 3712; the excerpt crops 3030 × 1810 at (0, 1902) and scales to 1600 × 956. Source colors, labels and the complete legend are preserved; the caption identifies the colors as a paper illustration. The original overview figure supplied for Publications remains intact.
