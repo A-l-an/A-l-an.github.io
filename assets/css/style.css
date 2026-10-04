@@ -905,7 +905,7 @@ main {
 
 .conference-keywords li {
   padding: 4px 8px;
-  border: 1px solid var(--jet);
+  border: 1px solid var(--light-gray-70);
   border-radius: 4px;
 }
 

@@ -23,7 +23,7 @@ Updated 2026-10-04 for the FocalFlow publication and conference highlight.
 - Latest in-app browser checks at 320, 390, 768 and 1440 CSS pixels: no horizontal overflow. Mobile title is restored to 16 px, time and room are 14 px in the normal text color, labels/session are 13 px, keyword pills remain 14 px and card padding is restored to 16 px. Desktop title remains 20 px. The previous expanded-content image is restored from the identical baseline component.
 - Mobile paper/session actions remain compact 13 px underlined links with 32 px target height and 16 px separation. The disclosure is restored to its original 44 px height; desktop action targets remain 44 px. Disclosure content and the 1600 × 956 illustration are unchanged.
 - Dark and light phone/desktop views checked. The strong time/room accent colors are removed; the values use the same normal text color as the surrounding content. Exactly one estimated-start label remains visible.
-- Independent scope review passed: after normalizing the CSS cache version, the entire HTML equals revision 601204f. The CSS differs from that revision only by 35 lines targeting lower mobile schedule labels/values and action links. No upper-card or desktop rules were changed.
+- The restrained mobile schedule adjustment was scope-checked against revision 601204f. Subsequent content updates are documented below. The latest change only raises the keyword border contrast via the existing theme-aware muted-gray token; border width, padding, typography and layout remain unchanged.
 - Earlier Chrome checks covered navigation, sidebar, form validity without submission, direct-link focus and theme persistence at 320–1440 px. This refinement does not change their JavaScript. `git diff --check` passes.
 
 Checks cover local browser rendering and simulated viewport sizes, not physical phones, screen-reader use, live GitHub Pages deployment or form delivery. Nine pre-existing missing images in hidden Portfolio content remain outside this change. The earlier design detector ran in degraded regex mode, so its output is not a computed-contrast certification.
@@ -47,3 +47,10 @@ The FocalFlow acceptance News retains its original 2026/07 message, with the own
 - Browser checks at 320, 390 and 1440 CSS pixels confirm the October/July News order and wording, complete image loading at 1540 × 542, `object-fit: contain`, and no horizontal overflow. Mobile stacks the full image above the text; desktop retains the existing side-by-side template. Independent scope/content review and `git diff --check` pass.
 - Metadata verified against [Crossref](https://api.crossref.org/works/10.1145/3810207) and the [HKUST research portal](https://researchportal.hkust.edu.hk/en/publications/stand-up-head-up-stretch-up-exploring-opportunities-for-context-a/): five authors, IMWUT 10(2), Article 67, June 2026.
 - The owner supplied the original 1540 × 542 PNG. The repository asset matches it byte-for-byte; the figure is not cropped, redrawn or relabelled.
+
+## Keyword border visibility
+
+The four conference keyword tags now use `--light-gray-70` for their 1 px borders instead of the low-contrast surface-border token. Dark and light browser checks confirm the borders are visible while 14 px text and 4 px × 8 px padding remain unchanged. The independent source review confirmed only the border-color variable and stylesheet cache version changed in product code.
+
+- [Dark border detail](keyword-borders-dark.png)
+- [Light border detail](keyword-borders-light.png)
