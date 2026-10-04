@@ -9,7 +9,7 @@ Updated 2026-10-04 for the FocalFlow publication and UbiComp/ISWC conference hig
 | 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
 | 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
 
-The after screenshots show settled page states, with animations disabled for capture.
+The after screenshots show settled page states in the Codex in-app browser after the compact-card refinement.
 
 ## Local checks
 
@@ -22,6 +22,13 @@ Preview from the repository root with `python3 -m http.server 4000`, then visit 
 - Contact form validity checked without submitting. JavaScript syntax and `git diff --check` pass.
 
 These checks use local Chrome with simulated viewport sizes. They do not establish physical iPhone/Android behavior, live GitHub Pages deployment, or contact-form delivery. Nine pre-existing missing images in the hidden Portfolio page remain outside this change. The design detector ran in degraded regex mode because its optional HTML parser dependencies were unavailable; it does not verify computed contrast.
+
+## Compact-card refinement
+
+- In-app browser checks at 320, 390, 768 and 1440 CSS pixels: full title present, three decision-making bullets and the brief introduction visible, no horizontal overflow. Computed title size is 16 px on phones and 20 px at larger widths; body text is 14 px. Both action links and the diagram disclosure retain 44 px targets.
+- Dark and light phone/desktop views checked. Publication and research-interest content remains identical to the previous version. An independent source review found no actionable issues.
+- `Approx. 11:45` is an estimate, not an announced talk time. The official list places FocalFlow fourth among six papers in a 90-minute session. Assuming equal 15-minute slots gives 11:00 + 3 × 15 minutes = 11:45. The page states the assumption and that timing may shift.
+- The CSS URL includes a version query because the in-app browser retained the previous stylesheet even after a normal reload. The new computed sizes were verified after the version change.
 
 ## Content sources
 

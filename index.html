@@ -29,7 +29,7 @@
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261004-2">
 
   <!--
     - google font link
@@ -259,19 +259,31 @@
         </header>
 
         <!-- Session details last verified 2026-10-04 against the official UbiComp/ISWC program.
-          11:00–12:30 is the full session; an individual FocalFlow talk time is not published. -->
+          11:00–12:30 is the full session; an individual FocalFlow talk time is not published.
+          The 11:45 estimate assumes equal 15-minute slots: 11:00 + (4 - 1) * (90 / 6).
+          FocalFlow is listed fourth of six papers. Actual slot lengths and order may differ. -->
         <section class="conference-spotlight" id="focalflow" aria-labelledby="focalflow-heading" tabindex="-1">
-          <div class="conference-overview">
-            <h2 id="focalflow-heading">FocalFlow</h2>
+          <header class="conference-header">
+            <h2 id="focalflow-heading">FocalFlow: Facilitating Decision-Making in Multi-Step Mobile Tasks for Blind and Low Vision People</h2>
             <p class="conference-event">at UbiComp/ISWC 2026</p>
-            <p class="conference-summary">Helping blind and low vision people make choices on their phones.</p>
+          </header>
+
+          <div class="conference-overview">
+            <ul class="conference-highlights">
+              <li>Understand the next decision.</li>
+              <li>Focus on task-relevant options.</li>
+              <li>Explore details before choosing.</li>
+            </ul>
+            <p class="conference-summary">Booking an appointment means choosing a department, a doctor and a time.
+              A screen reader reads useful and irrelevant items together. FocalFlow uses AI to organise these choices
+              around your task, reveal details when needed and keep you in control.</p>
           </div>
 
           <div class="conference-schedule" aria-label="Conference session details">
-            <p class="conference-date"><time datetime="2026-10-15">Thu 15 Oct 2026</time></p>
-            <p><strong>Session F3 · 11:00–12:30</strong> <span class="conference-timezone">Shanghai time</span></p>
-            <p class="conference-session">Computing for diverse communities</p>
-            <p class="conference-place"><strong>Pearl Hall (7F)</strong><br>Shanghai International Convention Center</p>
+            <p class="conference-talk"><strong>Approx. 11:45</strong><span>Estimated</span></p>
+            <p class="conference-place"><time datetime="2026-10-15">Thu 15 Oct 2026</time><span>Pearl Hall (7F)</span></p>
+            <p class="conference-session">Full session: 11:00–12:30 · 90 min</p>
+            <p class="conference-estimate">Listed 4th of 6; estimate assumes equal 15-min slots. Timing may shift.</p>
           </div>
 
           <div class="conference-actions">
@@ -280,9 +292,7 @@
           </div>
 
           <details class="conference-details">
-            <summary>How FocalFlow works</summary>
-            <p>For tasks like booking a hospital appointment, FocalFlow shows the options that matter and offers more
-              details when needed. The user stays in control of the decision.</p>
+            <summary>View system diagram</summary>
             <a class="conference-figure" href="./assets/images/paper-focalflow-2026.png"
               aria-label="Open the full FocalFlow overview image">
               <img src="./assets/images/paper-focalflow-2026.png" width="1564" height="592" loading="lazy"
