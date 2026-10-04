@@ -40,10 +40,10 @@ For a fresh local preview, run `python3 -m http.server 4000` from the repository
 
 ## News and publication update
 
-The FocalFlow News item is restored verbatim from revision 7a74a1a, including its 2026/07 date and acceptance announcement. Stand Up, Head Up, Stretch Up is added immediately after FocalFlow using the existing title/author/venue card styles; Junan Xie is marked in bold. The conference panel, all existing publication entries and JavaScript remain unchanged.
+The FocalFlow acceptance News retains its original 2026/07 message, with the owner-requested removal of “more details coming soon!”. A new 2026/10 entry announces the Shanghai visit to present the IMWUT paper, with a plane emoji and a friendly meeting greeting. Stand Up, Head Up, Stretch Up remains immediately after FocalFlow with the existing title/author/venue style and Junan Xie in bold; it now includes the owner-supplied illustration. The conference panel, publication metadata and JavaScript remain unchanged.
 
 - [Desktop News and publication preview](publication-news-desktop.png)
 - [New publication on mobile](publication-stretching-mobile.png)
-- Browser checks at 320, 390 and 1440 CSS pixels confirm the restored News text, publication order, complete title and author list, DOI target, and absence of horizontal overflow. Independent scope/content review and `git diff --check` pass.
+- Browser checks at 320, 390 and 1440 CSS pixels confirm the October/July News order and wording, complete image loading at 1540 × 542, `object-fit: contain`, and no horizontal overflow. Mobile stacks the full image above the text; desktop retains the existing side-by-side template. Independent scope/content review and `git diff --check` pass.
 - Metadata verified against [Crossref](https://api.crossref.org/works/10.1145/3810207) and the [HKUST research portal](https://researchportal.hkust.edu.hk/en/publications/stand-up-head-up-stretch-up-exploring-opportunities-for-context-a/): five authors, IMWUT 10(2), Article 67, June 2026.
-- No verified illustration was available: the publisher PDF returned HTTP 403, and the institutional/lab records provide metadata only. The entry is text-only rather than using an unrelated or invented image.
+- The owner supplied the original 1540 × 542 PNG. The repository asset matches it byte-for-byte; the figure is not cropped, redrawn or relabelled.

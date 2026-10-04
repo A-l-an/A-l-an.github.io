@@ -1760,6 +1760,14 @@ main {
   text-transform: none;
 }
 
+.stretching-banner {
+  background: #fff;
+}
+
+.stretching-banner img {
+  object-fit: contain;
+}
+
 .publication-venue {
   margin-top: 10px;
 }
