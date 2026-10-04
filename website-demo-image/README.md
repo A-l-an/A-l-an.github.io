@@ -13,17 +13,17 @@ Updated 2026-10-04 for the FocalFlow publication and conference highlight.
 
 ## Current content
 
-- On phones, the complete paper title is quieter, followed by emphasized talk time and room. Research directions appear as a compact secondary line: Mobile GUI Agents, Decision-Making, Non-visual Interaction and Adaptive Interfaces. Desktop typography and button appearance are retained.
+- The upper card is restored exactly to revision 601204f: full title, conference label, research keyword pills, spacing and order. Only the lower mobile schedule and action links receive a small refinement; desktop styling is unchanged.
 - The native About the project disclosure starts closed. It explains the decision-making problem and the system's approach, then shows an excerpt from the paper's highlighted interface illustration.
 - The talk block labels 11:45 once as the estimated start, with date and room separately associated. The full session window remains secondary.
 - Publication metadata, the original publication figure, and Research Interests remain unchanged.
 
 ## Verification
 
-- Latest in-app browser checks at 320, 390, 767, 768 and 1440 CSS pixels: no horizontal overflow; full title retained. Mobile title 14 px, emphasized time 18 px and room 16 px; secondary metadata/keywords 12 px. The desktop title remains 20 px. Earlier expanded-state checks also passed.
-- Native disclosure opened and closed by Enter. At the owner's request, mobile paper/session actions are 13 px underlined text links with 32 px target height and 16 px separation; the disclosure is 36 px high. Desktop action targets remain 44 px. The 1600 × 956 illustration still loads and fits the disclosure without clipping.
-- Dark and light phone/desktop views checked. Emphasized time/room text contrast is 8.13:1 in dark mode and 5.52:1 in light mode, calculated from browser-reported foreground/background colors. Exactly one estimated-start label remains visible; secondary session data is retained.
-- Independent source/content/image review passed. The current change leaves all content after the conference panel, JavaScript and the original publication image unchanged.
+- Latest in-app browser checks at 320, 390, 768 and 1440 CSS pixels: no horizontal overflow. Mobile title is restored to 16 px, time and room are 14 px in the normal text color, labels/session are 13 px, keyword pills remain 14 px and card padding is restored to 16 px. Desktop title remains 20 px. The previous expanded-content image is restored from the identical baseline component.
+- Mobile paper/session actions remain compact 13 px underlined links with 32 px target height and 16 px separation. The disclosure is restored to its original 44 px height; desktop action targets remain 44 px. Disclosure content and the 1600 × 956 illustration are unchanged.
+- Dark and light phone/desktop views checked. The strong time/room accent colors are removed; the values use the same normal text color as the surrounding content. Exactly one estimated-start label remains visible.
+- Independent scope review passed: after normalizing the CSS cache version, the entire HTML equals revision 601204f. The CSS differs from that revision only by 35 lines targeting lower mobile schedule labels/values and action links. No upper-card or desktop rules were changed.
 - Earlier Chrome checks covered navigation, sidebar, form validity without submission, direct-link focus and theme persistence at 320–1440 px. This refinement does not change their JavaScript. `git diff --check` passes.
 
 Checks cover local browser rendering and simulated viewport sizes, not physical phones, screen-reader use, live GitHub Pages deployment or form delivery. Nine pre-existing missing images in hidden Portfolio content remain outside this change. The earlier design detector ran in degraded regex mode, so its output is not a computed-contrast certification.

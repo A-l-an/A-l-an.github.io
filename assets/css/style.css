@@ -2856,75 +2856,30 @@ textarea.form-input::-webkit-resizer {
   }
 
   .conference-spotlight {
-    --conference-emphasis: #FF8B67;
-    padding: 14px;
+    padding: 16px;
   }
 
-  .theme-light .conference-spotlight {
-    --conference-emphasis: #A63822;
-  }
-
-  .conference-spotlight h2 {
-    color: var(--white-2);
-    font-size: 14px;
-    font-weight: var(--fw-500);
-  }
-
-  .conference-event,
   .conference-talk dt,
   .conference-room dt,
   .conference-session {
     color: var(--light-gray);
-    font-size: 12px;
+    font-size: 13px;
   }
 
-  .conference-schedule {
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-
-  .conference-talk dd {
-    color: var(--conference-emphasis);
-    font-size: 18px;
-    line-height: 1.35;
+  .conference-talk dd,
+  .conference-room dd {
+    font-size: 14px;
+    font-weight: var(--fw-600);
   }
 
   .conference-room {
     align-items: baseline;
-    margin-top: 4px;
-  }
-
-  .conference-room dd {
-    color: var(--conference-emphasis);
-    font-size: 16px;
-    font-weight: var(--fw-600);
-  }
-
-  .conference-session {
-    margin-top: 4px;
-  }
-
-  .conference-keywords {
-    display: block;
-    margin-top: 12px;
-    color: var(--light-gray);
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .conference-keywords li {
-    display: inline;
-    padding: 0;
-    border: 0;
-  }
-
-  .conference-keywords li + li::before {
-    content: " · ";
+    margin-top: 6px;
   }
 
   .conference-actions {
     gap: 16px;
-    margin-top: 6px;
+    margin-top: 8px;
   }
 
   .conference-link {
@@ -2937,16 +2892,6 @@ textarea.form-input::-webkit-resizer {
     font-size: 13px;
     text-decoration: underline;
     text-underline-offset: 3px;
-  }
-
-  .conference-details {
-    margin-top: 6px;
-  }
-
-  .conference-details summary {
-    min-height: 36px;
-    padding: 8px 0;
-    font-size: 13px;
   }
 
   .blog-post-item > a {
