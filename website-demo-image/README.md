@@ -13,16 +13,16 @@ Updated 2026-10-04 for the FocalFlow publication and conference highlight.
 
 ## Current content
 
-- The full paper title is followed by research-direction keywords: Mobile GUI Agents, Decision-Making, Non-visual Interaction and Adaptive Interfaces.
+- On phones, the complete paper title is quieter, followed by emphasized talk time and room. Research directions appear as a compact secondary line: Mobile GUI Agents, Decision-Making, Non-visual Interaction and Adaptive Interfaces. Desktop typography and button appearance are retained.
 - The native About the project disclosure starts closed. It explains the decision-making problem and the system's approach, then shows an excerpt from the paper's highlighted interface illustration.
 - The talk block labels 11:45 once as the estimated start, with date and room separately associated. The full session window remains secondary.
 - Publication metadata, the original publication figure, and Research Interests remain unchanged.
 
 ## Verification
 
-- In-app browser checks at 320, 390, 768 and 1440 CSS pixels: no horizontal overflow with the explanation expanded; all four keywords and the full title retained. Mobile title 16 px, larger-screen title 20 px, body 14 px.
-- Native disclosure opened by click and closed by Enter. Paper/session links and disclosure retain 44 px minimum height. The new 1600 × 956 illustration loads and fits the disclosure without clipping.
-- Dark and light phone/desktop views checked. Exactly one estimated-start label is visible; the previous action slogans, Booking introduction and duplicate Approx./Estimated display are absent.
+- Latest in-app browser checks at 320, 390, 767, 768 and 1440 CSS pixels: no horizontal overflow; full title retained. Mobile title 14 px, emphasized time 18 px and room 16 px; secondary metadata/keywords 12 px. The desktop title remains 20 px. Earlier expanded-state checks also passed.
+- Native disclosure opened and closed by Enter. At the owner's request, mobile paper/session actions are 13 px underlined text links with 32 px target height and 16 px separation; the disclosure is 36 px high. Desktop action targets remain 44 px. The 1600 × 956 illustration still loads and fits the disclosure without clipping.
+- Dark and light phone/desktop views checked. Emphasized time/room text contrast is 8.13:1 in dark mode and 5.52:1 in light mode, calculated from browser-reported foreground/background colors. Exactly one estimated-start label remains visible; secondary session data is retained.
 - Independent source/content/image review passed. The current change leaves all content after the conference panel, JavaScript and the original publication image unchanged.
 - Earlier Chrome checks covered navigation, sidebar, form validity without submission, direct-link focus and theme persistence at 320–1440 px. This refinement does not change their JavaScript. `git diff --check` passes.
 
