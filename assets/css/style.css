@@ -1752,6 +1752,14 @@ main {
   text-transform: none;
 }
 
+#stretching-publication {
+  margin-top: 8%;
+}
+
+#stretching-publication .blog-item-title {
+  text-transform: none;
+}
+
 .publication-venue {
   margin-top: 10px;
 }

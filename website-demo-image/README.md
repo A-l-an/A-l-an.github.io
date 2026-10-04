@@ -37,3 +37,13 @@ For a fresh local preview, run `python3 -m http.server 4000` from the repository
 - Estimated talk start: 11:00 + (4 − 1) × (90 minutes / 6 papers) = 11:45. This assumes the published order and equal 15-minute slots. An individual start time has not been announced, and actual order/durations can vary. The UI labels this as an estimate rather than an official time.
 - Project explanation: the owner's FocalFlow manuscript Introduction (pp. 2–3) and system section. The manuscript describes server-side LLM agents with an Android client, so the keywords do not claim fully on-device inference.
 - Highlighted figure: Figure 4 from the owner's manuscript, page 12. The original embedded RGB image is 3030 × 3712; the excerpt crops 3030 × 1810 at (0, 1902) and scales to 1600 × 956. Source colors, labels and the complete legend are preserved; the caption identifies the colors as a paper illustration. The original overview figure supplied for Publications remains intact.
+
+## News and publication update
+
+The FocalFlow News item is restored verbatim from revision 7a74a1a, including its 2026/07 date and acceptance announcement. Stand Up, Head Up, Stretch Up is added immediately after FocalFlow using the existing title/author/venue card styles; Junan Xie is marked in bold. The conference panel, all existing publication entries and JavaScript remain unchanged.
+
+- [Desktop News and publication preview](publication-news-desktop.png)
+- [New publication on mobile](publication-stretching-mobile.png)
+- Browser checks at 320, 390 and 1440 CSS pixels confirm the restored News text, publication order, complete title and author list, DOI target, and absence of horizontal overflow. Independent scope/content review and `git diff --check` pass.
+- Metadata verified against [Crossref](https://api.crossref.org/works/10.1145/3810207) and the [HKUST research portal](https://researchportal.hkust.edu.hk/en/publications/stand-up-head-up-stretch-up-exploring-opportunities-for-context-a/): five authors, IMWUT 10(2), Article 67, June 2026.
+- No verified illustration was available: the publisher PDF returned HTTP 403, and the institutional/lab records provide metadata only. The entry is text-only rather than using an unrelated or invented image.
