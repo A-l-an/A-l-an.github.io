@@ -29,7 +29,7 @@
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261009-1">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261009-2">
 
   <!--
     - google font link
@@ -76,9 +76,11 @@
             <h1 class="name" title="Junan XIE">Junan <span class="name-accent">XIE</span></h1>
 
             <p class="title">PhD Student</p>
+            <p class="mobile-profile-line">PhD Student · HKUST(GZ)</p>
+            <p class="mobile-research-line">HCI · Accessibility · Human–AI</p>
           </div>
 
-          <button class="info_more-btn" data-sidebar-btn aria-label="Show contacts" aria-expanded="false"
+          <button class="info_more-btn" type="button" data-sidebar-btn aria-label="Show contacts" aria-expanded="false"
             aria-controls="sidebar-contacts">
             <span>Show Contacts</span>
 
@@ -87,7 +89,27 @@
 
         </div>
 
-        <div class="sidebar-info_more" id="sidebar-contacts">
+        <div class="profile-quick-actions">
+          <a href="./assets/contact/junan-xie.vcf" download="junan-xie.vcf" type="text/vcard">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="18" rx="2"></rect>
+              <path d="M8 2v4M16 2v4M8 19v-1a4 4 0 0 1 8 0v1"></path>
+              <circle cx="12" cy="11" r="3"></circle>
+            </svg>
+            <span>Save Contact</span>
+          </a>
+          <a href="mailto:jxie622@connect.hkust-gz.edu.cn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 6 9 7 9-7"></path>
+            </svg>
+            <span>Email Me</span>
+          </a>
+        </div>
+
+        <div class="sidebar-info_more" id="sidebar-contacts" hidden>
 
           <div class="separator"></div>
 
@@ -178,6 +200,8 @@
 
         </div>
 
+        <div class="mobile-conference-slot" data-mobile-conference hidden></div>
+
       </aside>
 
 
@@ -249,7 +273,7 @@
         <section class="conference-spotlight" id="focalflow" aria-labelledby="focalflow-heading" tabindex="-1">
           <header class="conference-header">
             <h2 id="focalflow-heading">FocalFlow: Facilitating Decision-Making in Multi-Step Mobile Tasks for Blind and Low Vision People</h2>
-            <p class="conference-event">at UbiComp/ISWC 2026</p>
+            <p class="conference-event"><span class="conference-event-desktop">at </span><span class="conference-event-mobile">Upcoming talk · </span>UbiComp/ISWC 2026</p>
           </header>
 
           <div class="conference-overview">
@@ -265,28 +289,54 @@
             <dl>
               <div class="conference-talk">
                 <dt>My talk · estimated start</dt>
-                <dd><time datetime="2026-10-15T11:45:00+08:00">Thu 15 Oct · 11:45</time></dd>
+                <dd>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                    <path d="M16 3v4M8 3v4M3 11h18"></path>
+                  </svg>
+                  <time datetime="2026-10-15T11:45:00+08:00">Thu 15 Oct · 11:45</time>
+                </dd>
               </div>
               <div class="conference-room">
                 <dt>Room</dt>
-                <dd>Pearl Hall (7F)</dd>
+                <dd>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="2.5"></circle>
+                  </svg>
+                  <span>Pearl Hall (7F)</span>
+                </dd>
               </div>
             </dl>
             <p class="conference-session">Full session: 11:00–12:30 (90 min)</p>
-            <a class="conference-calendar" href="./assets/calendar/focalflow-2026.ics" type="text/calendar"
-              aria-label="Add to Calendar: FocalFlow talk (estimated time)">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                <path d="M16 3v4M8 3v4M3 11h18M12 14v4M10 16h4"></path>
-              </svg>
-              <span>Add to Calendar</span>
-            </a>
           </div>
 
           <div class="conference-actions">
-            <a class="conference-link conference-link-primary" href="https://doi.org/10.1145/3831982">Read paper</a>
-            <a class="conference-link" href="https://ubicomp.org/ubicomp-iswc-2026/accepted-papers/#session-F3">View session</a>
+            <a class="conference-link conference-calendar" href="./assets/calendar/focalflow-2026.ics" type="text/calendar"
+              aria-label="Add to Calendar: FocalFlow talk (estimated time)">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5M16 3v4M8 3v4M3 11h18M18 15v6M15 18h6"></path>
+              </svg>
+              <span>Add to Calendar</span>
+            </a>
+            <a class="conference-link" href="https://doi.org/10.1145/3831982">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path>
+                <path d="M14 3v6h6M8 13h8M8 17h5"></path>
+              </svg>
+              <span>Read Paper</span>
+            </a>
+            <a class="conference-session-link" href="https://ubicomp.org/ubicomp-iswc-2026/accepted-papers/#session-F3">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 3h7v7M21 3l-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"></path>
+              </svg>
+              <span>View Session</span>
+            </a>
           </div>
 
           <details class="conference-details">
@@ -958,7 +1008,7 @@
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js?v=20261009-1"></script>
+  <script src="./assets/js/script.js?v=20261009-2"></script>
 
   <!--
     - ionicon link

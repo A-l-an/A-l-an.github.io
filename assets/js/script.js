@@ -10,21 +10,30 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+const sidebarContacts = document.getElementById("sidebar-contacts");
+const desktopLayout = window.matchMedia("(min-width: 1250px)");
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () {
-  elementToggleFunc(sidebar);
-  const expanded = sidebar.classList.contains("active");
+const syncSidebarContacts = function () {
+  const expanded = desktopLayout.matches || sidebar.classList.contains("active");
+  sidebarContacts.hidden = !expanded;
   sidebarBtn.setAttribute("aria-expanded", String(expanded));
   sidebarBtn.setAttribute("aria-label", expanded ? "Hide contacts" : "Show contacts");
   sidebarBtn.querySelector("span").textContent = expanded ? "Hide Contacts" : "Show Contacts";
+};
+
+// Hidden contacts stay out of both the layout and keyboard navigation.
+sidebarBtn.addEventListener("click", function () {
+  elementToggleFunc(sidebar);
+  syncSidebarContacts();
 });
+
+syncSidebarContacts();
+desktopLayout.addEventListener("change", syncSidebarContacts);
 
 // Keep the reading order aligned with the single-column or desktop layout.
 const news = document.querySelector("[data-news]");
 const sidebarColumn = document.querySelector(".sidebar-column");
 const main = document.querySelector("main");
-const desktopLayout = window.matchMedia("(min-width: 1250px)");
 
 const placeNews = function () {
   if (desktopLayout.matches) {
@@ -37,6 +46,37 @@ const placeNews = function () {
 placeNews();
 desktopLayout.addEventListener("change", placeNews);
 
+
+
+// Reuse the same conference content at its mobile and desktop locations.
+const mobileLayout = window.matchMedia("(max-width: 767px)");
+const spotlight = document.getElementById("focalflow");
+const mobileConferenceSlot = document.querySelector("[data-mobile-conference]");
+const aboutPage = document.querySelector('[data-page="about"]');
+const conferenceDetails = spotlight.querySelector(".conference-details");
+const conferenceKeywords = spotlight.querySelector(".conference-keywords");
+const conferenceHome = document.createComment("Conference desktop position");
+const keywordsHome = document.createComment("Keywords desktop position");
+spotlight.before(conferenceHome);
+conferenceKeywords.before(keywordsHome);
+
+const syncConferenceVisibility = function () {
+  mobileConferenceSlot.hidden = !mobileLayout.matches || !aboutPage.classList.contains("active");
+};
+
+const placeConference = function () {
+  if (mobileLayout.matches) {
+    mobileConferenceSlot.append(spotlight);
+    conferenceDetails.querySelector("summary").after(conferenceKeywords);
+  } else {
+    conferenceHome.after(spotlight);
+    keywordsHome.after(conferenceKeywords);
+  }
+  syncConferenceVisibility();
+};
+
+placeConference();
+mobileLayout.addEventListener("change", placeConference);
 
 
 // theme toggle
@@ -136,6 +176,7 @@ const activatePage = function (pageName) {
       link.removeAttribute("aria-current");
     }
   }
+  syncConferenceVisibility();
 };
 
 for (const link of navigationLinks) {
@@ -152,7 +193,6 @@ for (const link of navigationLinks) {
 const openConferenceLink = function () {
   if (window.location.hash !== "#focalflow") return;
   activatePage("about");
-  const spotlight = document.getElementById("focalflow");
   window.requestAnimationFrame(function () {
     spotlight.focus({ preventScroll: true });
     spotlight.scrollIntoView({ block: "start" });
