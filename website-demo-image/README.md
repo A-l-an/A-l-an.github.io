@@ -54,3 +54,21 @@ The four conference keyword tags now use `--light-gray-70` for their 1 px border
 
 - [Dark border detail](keyword-borders-dark.png)
 - [Light border detail](keyword-borders-light.png)
+
+## Add to Calendar (2026-10-09)
+
+The schedule now includes a compact Add to Calendar link with an inline calendar icon and the existing orange accent. It downloads a single-event [iCalendar file](../assets/calendar/focalflow-2026.ics), which Apple Calendar can import after user confirmation. There is no calendar subscription, sign-in, invitation, automatic save, new script or website dependency.
+
+Prefilled values:
+
+- Title: FocalFlow talk (estimated time).
+- Shanghai local time: 15 October 2026, 11:45–12:00. UTC is used in the file so calendar clients can display the correct local time.
+- Location: Pearl Hall (7F), Shanghai International Convention Center, Shanghai, China.
+- Notes: full paper title, presenter, estimated-slot explanation, official full-session time and programme link; the event URL points to the paper DOI.
+- Status: tentative. The 15-minute duration follows the same equal-slot estimate used on the page; an exact individual presentation time is not published. Official programme rechecked on 2026-10-09.
+
+Validation: independent Python icalendar parsing, UTC-to-Shanghai conversion, field values, CRLF line endings, 75-octet folding and text escaping passed. The local HTTP endpoint returned 200 and text/calendar with byte-identical content. The file contains no alarm, recurrence, organizer or attendee. Directory-scoped Git attributes preserve the required CRLF bytes. Independent code review passed after aligning the accessible name with the visible Add to Calendar label.
+
+The browser automation runtime failed to start under the current environment configuration. Visual inspection of this addition and native Apple Calendar import were not completed, and no personal calendar event was saved. Existing screenshots predate this button and are not evidence of its rendered layout.
+
+Format references: [Apple Calendar import instructions](https://support.apple.com/guide/calendar/import-or-export-calendars-icl1023/mac) and [RFC 5545](https://www.rfc-editor.org/rfc/rfc5545.html).

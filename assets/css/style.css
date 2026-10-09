@@ -941,6 +941,31 @@ main {
   margin-top: 8px;
 }
 
+.conference-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--orange-yellow-crayola);
+  border-radius: 6px;
+  background: var(--orange-yellow-crayola);
+  color: #0A0A08;
+  font-size: 13px;
+  font-weight: var(--fw-600);
+  line-height: 1.4;
+}
+
+.conference-calendar svg {
+  flex-shrink: 0;
+}
+
+.conference-calendar:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
 .conference-actions {
   display: flex;
   flex-wrap: wrap;
