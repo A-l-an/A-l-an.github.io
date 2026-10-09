@@ -26,7 +26,7 @@ Updated 2026-10-04 for the FocalFlow publication and conference highlight.
 - The restrained mobile schedule adjustment was scope-checked against revision 601204f. Subsequent content updates are documented below. The latest change only raises the keyword border contrast via the existing theme-aware muted-gray token; border width, padding, typography and layout remain unchanged.
 - Earlier Chrome checks covered navigation, sidebar, form validity without submission, direct-link focus and theme persistence at 320–1440 px. This refinement does not change their JavaScript. `git diff --check` passes.
 
-Checks cover local browser rendering and simulated viewport sizes, not physical phones, screen-reader use, live GitHub Pages deployment or form delivery. Nine pre-existing missing images in hidden Portfolio content remain outside this change. The earlier design detector ran in degraded regex mode, so its output is not a computed-contrast certification.
+Checks cover local browser rendering and simulated viewport sizes, not physical phones, screen-reader use, live GitHub Pages deployment or form delivery. The hidden sample project section and its missing-image references have now been removed. The earlier design detector ran in degraded regex mode, so its output is not a computed-contrast certification.
 
 For a fresh local preview, run `python3 -m http.server 4000` from the repository root and visit `http://localhost:4000/`. The stylesheet URL includes a revision query because the in-app browser retained an older stylesheet through ordinary reloads.
 
@@ -72,3 +72,9 @@ Validation: independent Python icalendar parsing, UTC-to-Shanghai conversion, fi
 The browser automation runtime failed to start under the current environment configuration. Visual inspection of this addition and native Apple Calendar import were not completed, and no personal calendar event was saved. Existing screenshots predate this button and are not evidence of its rendered layout.
 
 Format references: [Apple Calendar import instructions](https://support.apple.com/guide/calendar/import-or-export-calendars-icl1023/mac) and [RFC 5545](https://www.rfc-editor.org/rfc/rfc5545.html).
+
+## Template content cleanup (2026-10-09)
+
+Removed the template testimonial markup and modal, sample project page, commented sample blog, their unused navigation entries, and a commented stock birthday. The unused public `index.txt` template transcript is deleted. Template-only modal and category-filter JavaScript is removed; the script URL is versioned so new HTML does not run cached code that expects deleted nodes. Shared publication CSS and genuine content remain unchanged.
+
+Temporary JSDOM regression checks confirm that the old script fails against the cleaned document, while the new script initializes successfully and preserves About/Resume/Contact navigation, sidebar ARIA, theme persistence, responsive News placement, form validity (without submitting), and the FocalFlow anchor. Real profile, research interests, publications, resume, contact, News and conference content were compared against the previous revision. `node --check` and `git diff --check` pass. These are DOM-level tests: the browser automation runtime still fails to start, so no new visual-browser or device acceptance is claimed.
