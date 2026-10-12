@@ -1,6 +1,6 @@
 # Homepage preview and validation
 
-Updated 2026-10-09 for the mobile reference layout. These current screenshots were rendered in an isolated local Chrome profile; the in-app browser automation runtime was unavailable.
+Layout screenshots were updated 2026-10-09; direct paper links were updated 2026-10-12. These current screenshots were rendered in an isolated local Chrome profile; the in-app browser automation runtime was unavailable.
 
 ## Current previews
 
@@ -18,7 +18,7 @@ Updated 2026-10-09 for the mobile reference layout. These current screenshots we
 - Add to Calendar and Read Paper use equal icon-and-label controls; the View Session link remains below them. These controls are also used on desktop, with the previous desktop content structure retained.
 - One conference section and one keyword list are moved at the breakpoint, without duplicate IDs or copied event data. Mobile keywords appear inside the default-closed About the project disclosure; desktop keywords return to their original overview.
 - On mobile, Resume and Contact hide the talk panel; About and the #focalflow link restore it. Collapsed contact details are hidden from layout and keyboard navigation.
-- Save Contact downloads a vCard containing only the already-public name, email, institution and website. The existing calendar file and paper/session destinations remain unchanged.
+- Save Contact downloads a vCard containing only the already-public name, email, institution and website. The calendar schedule and session destination remain unchanged; paper destinations now open PDFs hosted by this homepage.
 
 ## Current verification
 
@@ -81,3 +81,11 @@ Format references: [Apple Calendar import instructions](https://support.apple.co
 Removed the template testimonial markup and modal, sample project page, commented sample blog, their unused navigation entries, and a commented stock birthday. The unused public `index.txt` template transcript is deleted. Template-only modal and category-filter JavaScript is removed; the script URL is versioned so new HTML does not run cached code that expects deleted nodes. Shared publication CSS and genuine content remain unchanged.
 
 Temporary JSDOM regression checks confirm that the old script fails against the cleaned document, while the new script initializes successfully and preserves About/Resume/Contact navigation, sidebar ARIA, theme persistence, responsive News placement, form validity (without submitting), and the FocalFlow anchor. Real profile, research interests, publications, resume, contact, News and conference content were compared against the previous revision. `node --check` and `git diff --check` pass. These are DOM-level tests: the browser automation runtime still fails to start, so no new visual-browser or device acceptance is claimed.
+
+## Direct paper PDFs (2026-10-12)
+
+The owner supplied the two published PDFs. The homepage now serves them directly under descriptive filenames: [FocalFlow](../assets/paper/26IMWUT-FocalFlow.pdf) and [Stand Up, Head Up, Stretch Up](../assets/paper/26IMWUT-StandUp-HeadUp-StretchUp.pdf). The mobile/desktop Read Paper control and both publication cards open these files. The calendar's paper reference and event URL also point to the hosted FocalFlow PDF.
+
+Both supplied files were checked against their first-page title and DOI, rendered for inspection, and copied byte-for-byte (36 and 30 pages respectively). Local HTTP checks returned application/pdf and identical bytes for both files. The calendar's unfolded fields are unchanged except the two paper URLs; CRLF and 75-octet folding pass. No layout changes were made, so the existing layout screenshots still apply.
+
+Isolated Chrome click checks passed for the 390 px Read Paper control and both publication cards at 1440 px: each loaded a same-site PDF response (HTTP 200, application/pdf) and displayed the native PDF viewer, with no ACM navigation. These checks verify local Chrome behavior at simulated widths; they do not claim physical-phone or Safari acceptance.
