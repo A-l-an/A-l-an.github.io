@@ -1,10 +1,10 @@
 # Homepage preview and validation
 
-Updated 2026-10-13 after the owner clarified that the original UI and positions should remain; only wording should change. Layout is restored to d53c5c8.
+Updated 2026-10-14 after the owner clarified that the original UI and positions should remain; only wording should change. Layout is restored to d53c5c8.
 
 ## Current previews
 
-| Viewport | Before full title (ae03530, light) | Current, dark | Current, light |
+| Viewport | Before education restore (0e9d593, light) | Current, dark | Current, light |
 | --- | --- | --- | --- |
 | 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
 | 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
@@ -14,10 +14,10 @@ Updated 2026-10-13 after the owner clarified that the original UI and positions 
 ## Current scope
 
 - Original About / Resume / Contact navigation, original desktop conference layout and original mobile conference placement are restored. The added Research/project views and large research-theme heading are removed.
-- New identity wording and the owner's exact three About paragraphs stay in their original components. The original Research Interests component uses three new labels and a small exploratory-method line.
+- The original greeting and education/advisor paragraphs are restored, excluding first-year. Four Prof. prefixes, Master's advisers and the bachelor's institution remain. The newer two research paragraphs stay unchanged. The original Research Interests component includes Accessibility and Human Behavior Modelling alongside its three current interests; the standalone Exploring line is removed.
 - Upcoming talk · UbiComp/ISWC 2026, the estimated 15 October 11:45 time, Pearl Hall (7F), full session, calendar, PDF and View Session use the original positions and styling.
-- The complete FocalFlow paper title uses one color throughout. Its visible summary, AI-supported information access for deliberate decisions, is 13 px white; light mode adds a small dark background for readability. The detailed description and connection sentence remain inside the default-closed disclosure, alongside the existing public explanation and illustration.
-- JavaScript is byte-identical to d53c5c8. CSS differs from that layout only by identity text wrapping constraints, a 44 px minimum theme target, and the small summary style. PDF, calendar, contact, portrait, Publications, Resume, Contact and News remain unchanged.
+- The complete FocalFlow paper title is uniformly orange in both themes and all device widths. Its visible summary, AI-supported information access for deliberate decisions, is 13 px white; light mode adds a small dark background for readability. The detailed description and connection sentence remain inside the default-closed disclosure, alongside the existing public explanation and illustration.
+- JavaScript is byte-identical to d53c5c8. CSS differs from that layout only by identity text wrapping constraints, a 44 px minimum theme target, the small summary style, and the orange paper title. PDF, calendar, contact, portrait, Publications, Resume, Contact and News remain unchanged.
 
 ## Current verification
 
@@ -25,7 +25,7 @@ Updated 2026-10-13 after the owner clarified that the original UI and positions 
 - Real isolated Chrome checks at 320, 390, 768 and 1440 CSS pixels in light/dark themes: no horizontal overflow, meeting date and room within the mobile first viewport, paper prose not drawn until native expansion, and restored navigation/sidebar/theme/#focalflow behavior.
 - Native details visibility is checked with checkVisibility and rendered screenshots; getClientRects alone can report geometry for closed details and is not evidence that its contents are drawn.
 - Independent read-only review passed10 width/theme scenarios, including320×568 and390×844 first-screen essentials, native mouse/Enter expansion and hidden-link keyboard behavior; no findings.
-- These are local Chrome viewport checks, not physical-phone or production-rendering acceptance. CSS and JS URLs are versioned together as 20261013-3.
+- These are local Chrome viewport checks, not physical-phone or production-rendering acceptance. CSS and JS URLs are versioned together as 20261014-1.
 
 The earlier mainland-phone blank-loading diagnosis remains unresolved: one desktop GitHub root request timed out after12 s, while the measured Google font stylesheet requests succeeded. This wording/layout correction makes no claim to fix network loading.
 
@@ -91,3 +91,9 @@ Isolated Chrome click checks passed for the 390 px Read Paper control and both p
 The owner confirmed the local preview before publishing. The title is FocalFlow: Facilitating Decision-Making in Multi-Step Mobile Tasks for Blind and Low Vision People. Its short summary is placed immediately below it, outside the disclosure; the repeated disclosure subtitle is removed. Existing navigation, date/location, controls and links remain intact.
 
 Actual isolated Chrome checks at 320, 390 and 1440 px in both themes confirmed the exact full title as one text node/color, exact summary text, 13 px white summary smaller than the title, no horizontal overflow, closed project details and date/location within the 844 px mobile viewport. These are simulated viewports, not physical-phone acceptance.
+
+## Orange title and education/advisor restoration (2026-10-14)
+
+[Restored biography preview](about-restored.png). The original institution/adviser wording is restored from d53c5c8 with only first-year omitted. Prof. Rachel Franz, Prof. Hui Xiong, Prof. Mingming Fan and Prof. Xin Tong retain their original link destinations; the master's and Harbin Institute of Technology, Shenzhen details remain. Accessibility and Human Behavior Modelling are restored as research interests, and the standalone Exploring: Computational Cognitive Modeling line is removed. New research paragraphs remain unchanged.
+
+Independent source review passed. Actual Chrome checks at 320, 390 and 1440 px in both themes confirmed the orange full title, all four professor prefixes, education and interest text, removal of the standalone line, no overflow, closed details and the original mobile meeting placement.

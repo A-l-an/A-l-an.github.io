@@ -911,6 +911,10 @@ main {
   color: var(--white-2);
 }
 
+#focalflow-heading {
+  color: var(--orange-yellow-crayola);
+}
+
 .conference-summary {
   align-self: flex-start;
   max-width: 100%;
