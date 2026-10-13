@@ -4,7 +4,7 @@ Updated 2026-10-13 after the owner clarified that the original UI and positions 
 
 ## Current previews
 
-| Viewport | Before correction (532cb46, light) | Current, dark | Current, light |
+| Viewport | Before full title (ae03530, light) | Current, dark | Current, light |
 | --- | --- | --- | --- |
 | 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
 | 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
@@ -16,8 +16,8 @@ Updated 2026-10-13 after the owner clarified that the original UI and positions 
 - Original About / Resume / Contact navigation, original desktop conference layout and original mobile conference placement are restored. The added Research/project views and large research-theme heading are removed.
 - New identity wording and the owner's exact three About paragraphs stay in their original components. The original Research Interests component uses three new labels and a small exploratory-method line.
 - Upcoming talk · UbiComp/ISWC 2026, the estimated 15 October 11:45 time, Pearl Hall (7F), full session, calendar, PDF and View Session use the original positions and styling.
-- The paper subtitle, description and connection sentence are inside the original default-closed native disclosure, alongside the existing public explanation and illustration. The new plain-language caption is retained.
-- JavaScript is byte-identical to d53c5c8. CSS differs from that layout only by identity text wrapping constraints and a 44 px minimum theme target. PDF, calendar, contact, portrait, Publications, Resume, Contact and News remain unchanged.
+- The complete FocalFlow paper title uses one color throughout. Its visible summary, AI-supported information access for deliberate decisions, is 13 px white; light mode adds a small dark background for readability. The detailed description and connection sentence remain inside the default-closed disclosure, alongside the existing public explanation and illustration.
+- JavaScript is byte-identical to d53c5c8. CSS differs from that layout only by identity text wrapping constraints, a 44 px minimum theme target, and the small summary style. PDF, calendar, contact, portrait, Publications, Resume, Contact and News remain unchanged.
 
 ## Current verification
 
@@ -25,7 +25,7 @@ Updated 2026-10-13 after the owner clarified that the original UI and positions 
 - Real isolated Chrome checks at 320, 390, 768 and 1440 CSS pixels in light/dark themes: no horizontal overflow, meeting date and room within the mobile first viewport, paper prose not drawn until native expansion, and restored navigation/sidebar/theme/#focalflow behavior.
 - Native details visibility is checked with checkVisibility and rendered screenshots; getClientRects alone can report geometry for closed details and is not evidence that its contents are drawn.
 - Independent read-only review passed10 width/theme scenarios, including320×568 and390×844 first-screen essentials, native mouse/Enter expansion and hidden-link keyboard behavior; no findings.
-- These are local Chrome viewport checks, not physical-phone or production-rendering acceptance. CSS and JS URLs are versioned together as 20261013-2.
+- These are local Chrome viewport checks, not physical-phone or production-rendering acceptance. CSS and JS URLs are versioned together as 20261013-3.
 
 The earlier mainland-phone blank-loading diagnosis remains unresolved: one desktop GitHub root request timed out after12 s, while the measured Google font stylesheet requests succeeded. This wording/layout correction makes no claim to fix network loading.
 
@@ -85,3 +85,9 @@ The owner supplied the two published PDFs. The homepage now serves them directly
 Both supplied files were checked against their first-page title and DOI, rendered for inspection, and copied byte-for-byte (36 and 30 pages respectively). Local HTTP checks returned application/pdf and identical bytes for both files. The calendar's unfolded fields are unchanged except the two paper URLs; CRLF and 75-octet folding pass. No layout changes were made, so the existing layout screenshots still apply.
 
 Isolated Chrome click checks passed for the 390 px Read Paper control and both publication cards at 1440 px: each loaded a same-site PDF response (HTTP 200, application/pdf) and displayed the native PDF viewer, with no ACM navigation. These checks verify local Chrome behavior at simulated widths; they do not claim physical-phone or Safari acceptance.
+
+## Complete title and short summary (2026-10-14)
+
+The owner confirmed the local preview before publishing. The title is FocalFlow: Facilitating Decision-Making in Multi-Step Mobile Tasks for Blind and Low Vision People. Its short summary is placed immediately below it, outside the disclosure; the repeated disclosure subtitle is removed. Existing navigation, date/location, controls and links remain intact.
+
+Actual isolated Chrome checks at 320, 390 and 1440 px in both themes confirmed the exact full title as one text node/color, exact summary text, 13 px white summary smaller than the title, no horizontal overflow, closed project details and date/location within the 844 px mobile viewport. These are simulated viewports, not physical-phone acceptance.

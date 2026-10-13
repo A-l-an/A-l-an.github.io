@@ -911,6 +911,22 @@ main {
   color: var(--white-2);
 }
 
+.conference-summary {
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 6px;
+  color: #F0F0EC;
+  font-size: 13px;
+  font-weight: var(--fw-300);
+  line-height: 1.45;
+}
+
+.theme-light .conference-summary {
+  padding: 3px 6px;
+  border-radius: 3px;
+  background: #3D3D3A;
+}
+
 .conference-event {
   margin-top: 4px;
   font-size: 14px;
