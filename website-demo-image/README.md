@@ -1,37 +1,47 @@
 # Homepage preview and validation
 
-Layout screenshots were updated 2026-10-09; direct paper links were updated 2026-10-12. These current screenshots were rendered in an isolated local Chrome profile; the in-app browser automation runtime was unavailable.
+Updated 2026-10-13 for the owner's research identity and public homepage narrative. Current screenshots use an isolated local Chrome profile.
 
 ## Current previews
 
-| Viewport | Before (23755b2, light) | After, dark | After, light |
+| Viewport | Before (d53c5c8, light) | Current, dark | Current, light |
 | --- | --- | --- | --- |
-| 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
-| 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
+| 390 × 900 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
+| 1440 × 1100 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
 
-[Expanded project details](mobile-expanded.png) include the preserved research keywords, explanation and loaded paper figure; a tall viewport captures the whole card without the fixed navigation covering its text.
+- [Research, mobile](research-mobile.png) and [desktop](research-desktop.png)
+- [FocalFlow featured card, mobile](focalflow-mobile.png) and [desktop](focalflow-desktop.png)
+- [FocalFlow project detail, mobile](focalflow-project-mobile.png) and [desktop](focalflow-project-desktop.png)
 
-## Current layout
+Full card previews use tall viewports so fixed mobile navigation does not cover the captured text. Earlier preview files and dated validation records are historical.
 
-- At widths up to 767 px, the profile, public contact shortcuts and upcoming talk form one top card. The existing portrait and name are followed by compact affiliation/research lines, Save Contact and Email Me.
-- The mobile talk places conference context above its title, then shows icon-labelled time and room. The 11:45 start remains explicitly estimated, with the full session window retained below it. Metadata does not exceed the title size.
-- Add to Calendar and Read Paper use equal icon-and-label controls; the View Session link remains below them. These controls are also used on desktop, with the previous desktop content structure retained.
-- One conference section and one keyword list are moved at the breakpoint, without duplicate IDs or copied event data. Mobile keywords appear inside the default-closed About the project disclosure; desktop keywords return to their original overview.
-- On mobile, Resume and Contact hide the talk panel; About and the #focalflow link restore it. Collapsed contact details are hidden from layout and keyboard navigation.
-- Save Contact downloads a vCard containing only the already-public name, email, institution and website. The calendar schedule and session destination remain unchanged; paper destinations now open PDFs hosted by this homepage.
+## Current content and order
 
-## Current verification
+- The name label is Human–AI Interaction · Human Attention. The main theme is Attention and Cognitive Effort in Human–AI Interaction.
+- The owner's three supplied About paragraphs are used verbatim, with existing institution and advisor links. The biography uses PhD student without an annually expiring year label.
+- The sequence is the personal theme, About, a short FocalFlow feature, then Research Interests, Research Questions and Publications on both mobile and desktop. The former mobile conference relocation is removed.
+- Exactly three interests are shown: Human–AI Interaction, Attention & Cognitive Effort, Adaptive Interfaces. Computational Cognitive Modeling is explicitly exploratory; the detailed Research view also labels computational rationality as an exploratory method interest.
+- Three question titles on the homepage link to focused sections in Research. The explanation and current-focus direction appear there, without any unpublished project title, figure, sample count, finding or model proposal.
+- FocalFlow uses the supplied subtitle, short system description and research-connection sentence. Its labels are Information Access, Decision Support and Accessibility. The full existing public explanation and original paper figure appear in Project details, with the supplied plain-language caption.
+- Report metadata remain attached to FocalFlow and compact: 15 Oct at 11:45 is explicitly Estimated, with Pearl Hall (7F) and the full 11:00–12:30 session retained. Calendar, the hosted PDF and View Session remain available.
+- Publications, Resume, Contact including its form/iframe, News, PDFs, calendar and contact files retain their previous content.
 
-- Actual isolated Chrome rendering at 320, 390, 768 and 1440 CSS pixels in both light and dark themes: no horizontal overflow; one conference section and keyword list; all three talk actions have SVG icons, visible labels and at least 44 px target height. Mobile title is 17 px and time/room 16 px; desktop title remains 20 px.
-- Repeated breakpoint changes restore the conference and keywords to the correct locations. Navigation, sidebar expansion/ARIA, native project disclosure, #focalflow focus, theme persistence, and native form validity pass. No form was submitted.
-- Real Tab key events reach Show contacts, Save Contact, Email Me, calendar, paper, session and project disclosure in order; collapsed contact fields are not focusable.
-- Local downloads return HTTP 200: the vCard is served as text/x-vcard and the unchanged event as text/calendar. vCard CRLF line endings, bounded line lengths and public-only fields were checked. No email was sent and no contact or calendar event was imported into a personal app.
-- Independent read-only review additionally covered 575, 767, 1024, 1249 and 1250 px, Enter-key activation of the disclosure, initial deep links and News placement; no findings.
-- Source comparison preserves the profile's original contacts, About text, research interests, publications, Resume, Contact, News, project explanation, image and existing links. JavaScript syntax and whitespace checks pass.
+## Current validation
 
-These checks establish local browser rendering and interactions at simulated viewport widths. They do not establish physical-phone, Safari, screen-reader, native contact/calendar import or production-deployment behavior for this layout revision. Earlier verification records below describe their own dated changes.
+- Source audit checks exact author wording, tags, exploratory labels, HTML nesting/unique IDs, public boundaries, date/time semantics, original institution/advisor/asset destinations, and preserved sections.
+- Actual Chrome checks at 320, 390, 768 and 1440 CSS pixels in light and dark themes pass: no horizontal overflow, identity visible, all supplied About paragraphs present, About before FocalFlow, all requested controls named and reachable.
+- Question links, project details, direct hash loads, unknown hashes, back/forward, repeated viewport changes, sidebar ARIA/hidden contacts, theme persistence and form validity pass. No form was submitted or personal calendar/contact app changed.
+- Final narrow-screen checks confirm equal-width and equal-height calendar/paper controls; the theme target remains at least 44 px even before its external icon loads.
+- A fresh read-only reviewer independently covered 14 width/theme combinations, nine direct routes, real keyboard/mouse navigation, history, resize and 21 HTTP resources; no findings.
+- CSS and JS are both versioned 20261013-1. Syntax and whitespace checks pass. Local rendering and simulated viewport checks do not establish physical-phone, Safari, screen-reader or production-deployment acceptance.
 
-For local preview, run `python3 -m http.server 4000` from the repository root. CSS and JS URLs are both versioned as `20261009-2` to avoid mixing revisions.
+## Related loading diagnosis
+
+The owner previously reported a blank homepage lasting over a minute on mainland Wi-Fi without VPN. A separate bounded read-only desktop measurement saw one root HTML request return 200 in 1.068 s and another receive no HTTP first byte within 12.011 s after connection/TLS. Two stylesheet requests succeeded in 1.519/3.247 s; Google font CSS returned in 0.142/0.131 s; the Ionicons loader returned in 0.689/0.711 s. Two samples do not reproduce the phone's exact failure or identify a particular IP as causal.
+
+The Google font stylesheet remains a render-blocking external dependency, although it was reachable in these samples. The avatar is about 1.14 MB. PDFs are ordinary reading links and are not automatically fetched for the homepage. This content revision adds no external dependencies or hosting changes and does not claim to resolve the reported phone-loading issue.
+
+For local preview, run `python3 -m http.server 4000` from the repository root.
 
 ## Sources and estimate
 
