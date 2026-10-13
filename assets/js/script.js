@@ -48,6 +48,37 @@ desktopLayout.addEventListener("change", placeNews);
 
 
 
+// Reuse the same conference content at its mobile and desktop locations.
+const mobileLayout = window.matchMedia("(max-width: 767px)");
+const spotlight = document.getElementById("focalflow");
+const mobileConferenceSlot = document.querySelector("[data-mobile-conference]");
+const aboutPage = document.querySelector('[data-page="about"]');
+const conferenceDetails = spotlight.querySelector(".conference-details");
+const conferenceKeywords = spotlight.querySelector(".conference-keywords");
+const conferenceHome = document.createComment("Conference desktop position");
+const keywordsHome = document.createComment("Keywords desktop position");
+spotlight.before(conferenceHome);
+conferenceKeywords.before(keywordsHome);
+
+const syncConferenceVisibility = function () {
+  mobileConferenceSlot.hidden = !mobileLayout.matches || !aboutPage.classList.contains("active");
+};
+
+const placeConference = function () {
+  if (mobileLayout.matches) {
+    mobileConferenceSlot.append(spotlight);
+    conferenceDetails.querySelector("summary").after(conferenceKeywords);
+  } else {
+    conferenceHome.after(spotlight);
+    keywordsHome.after(conferenceKeywords);
+  }
+  syncConferenceVisibility();
+};
+
+placeConference();
+mobileLayout.addEventListener("change", placeConference);
+
+
 // theme toggle
 const themeToggleBtn = document.querySelector("[data-theme-toggle]");
 const themeToggleIcon = document.querySelector("[data-theme-icon]");
@@ -128,28 +159,16 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
-// Page and section destinations share one route so links also work on direct load.
+// page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
-const pageLinks = document.querySelectorAll("[data-page-link]");
-const routes = {
-  "#about": { page: "about" },
-  "#research": { page: "research" },
-  "#research-attention": { page: "research", target: "research-attention" },
-  "#research-engagement": { page: "research", target: "research-engagement" },
-  "#research-adaptation": { page: "research", target: "research-adaptation" },
-  "#project-focalflow": { page: "project-focalflow", target: "project-focalflow" },
-  "#focalflow": { page: "about", target: "focalflow" },
-  "#resume": { page: "resume" },
-  "#contact": { page: "contact" }
-};
 
 const activatePage = function (pageName) {
   for (const page of pages) {
     page.classList.toggle("active", page.dataset.page === pageName);
   }
   for (const link of navigationLinks) {
-    const active = link.dataset.navLink === (pageName === "project-focalflow" ? "about" : pageName);
+    const active = link.textContent.trim().toLowerCase() === pageName;
     link.classList.toggle("active", active);
     if (active) {
       link.setAttribute("aria-current", "page");
@@ -157,43 +176,29 @@ const activatePage = function (pageName) {
       link.removeAttribute("aria-current");
     }
   }
-};
-
-const showRoute = function () {
-  const route = routes[window.location.hash] || routes["#about"];
-  activatePage(route.page);
-  window.requestAnimationFrame(function () {
-    if (route.target) {
-      const target = document.getElementById(route.target);
-      target.focus({ preventScroll: true });
-      target.scrollIntoView({ block: "start" });
-    } else {
-      window.scrollTo(0, 0);
-    }
-  });
-};
-
-const navigateTo = function (hash) {
-  if (window.location.hash !== hash) {
-    window.history.pushState(null, "", window.location.pathname + window.location.search + hash);
-  }
-  showRoute();
+  syncConferenceVisibility();
 };
 
 for (const link of navigationLinks) {
   link.addEventListener("click", function () {
-    navigateTo("#" + link.dataset.navLink);
+    activatePage(this.textContent.trim().toLowerCase());
+    if (window.location.hash === "#focalflow") {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
   });
 }
 
-for (const link of pageLinks) {
-  link.addEventListener("click", function (event) {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    navigateTo(link.getAttribute("href"));
+// A shared conference link always reveals the About page before focusing the panel.
+const openConferenceLink = function () {
+  if (window.location.hash !== "#focalflow") return;
+  activatePage("about");
+  window.requestAnimationFrame(function () {
+    spotlight.focus({ preventScroll: true });
+    spotlight.scrollIntoView({ block: "start" });
   });
-}
+};
 
-showRoute();
-window.addEventListener("hashchange", showRoute);
-window.addEventListener("popstate", showRoute);
+activatePage("about");
+openConferenceLink();
+window.addEventListener("hashchange", openConferenceLink);

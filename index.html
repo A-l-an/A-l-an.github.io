@@ -29,7 +29,7 @@
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261013-1">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261013-2">
 
   <!--
     - google font link
@@ -77,6 +77,7 @@
 
             <p class="title">Human–AI Interaction · Human Attention</p>
             <p class="mobile-profile-line">PhD Student · HKUST(GZ)</p>
+            <p class="mobile-research-line">Human–AI Interaction · Human Attention</p>
           </div>
 
           <button class="info_more-btn" type="button" data-sidebar-btn aria-label="Show contacts" aria-expanded="false"
@@ -185,7 +186,10 @@
 
           </ul>
 
+
         </div>
+
+        <div class="mobile-conference-slot" data-mobile-conference hidden></div>
 
       </aside>
 
@@ -210,15 +214,11 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link active" type="button" data-nav-link="about" aria-current="page">About</button>
+            <button class="navbar-link  active" data-nav-link>About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" type="button" data-nav-link="research">Research</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" type="button" data-nav-link="resume">Resume</button>
+            <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
 
@@ -226,7 +226,7 @@
 
 
           <li class="navbar-item">
-            <button class="navbar-link" type="button" data-nav-link="contact">Contact</button>
+            <button class="navbar-link" data-nav-link>Contact</button>
           </li>
 
           <li class="navbar-item">
@@ -252,21 +252,8 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title research-theme-title">Attention and Cognitive Effort in Human–AI Interaction</h2>
+          <h2 class="h2 article-title">About me</h2>
         </header>
-
-        <section class="about-text" aria-labelledby="about-heading">
-          <h3 class="h3 service-title" id="about-heading">About</h3>
-          <p>Hi, I’m Junan (Janus) Xie, a PhD student at <a href="https://www.hkust-gz.edu.cn/">HKUST Guangzhou</a>,
-            advised by <a href="https://rachelfranz.com">Rachel Franz</a> and <a
-              href="https://scholar.google.com/citations?user=cVDF1tkAAAAJ&amp;hl=en">Hui Xiong</a>.</p>
-          <p>My research connects two questions: how AI can organise information to support deliberate decisions,
-            and how people coordinate their attention as AI-assisted work unfolds. Across these settings, I study
-            how AI changes the effort people devote to finding information, evaluating it, and deciding what to do next.</p>
-          <p>I combine empirical studies with interactive system design. I am exploring how computational cognitive
-            models could inform adaptive support, with the aim of reducing unnecessary search and coordination while
-            preserving human judgment and control.</p>
-        </section>
 
         <!-- Session details last verified 2026-10-04 against the official UbiComp/ISWC program.
           11:00–12:30 is the full session; an individual FocalFlow talk time is not published.
@@ -275,29 +262,40 @@
         <section class="conference-spotlight" id="focalflow" aria-labelledby="focalflow-heading" tabindex="-1">
           <header class="conference-header">
             <h2 id="focalflow-heading">FocalFlow</h2>
-            <p class="conference-subtitle">AI-supported information access for deliberate decisions</p>
+            <p class="conference-event"><span class="conference-event-desktop">Upcoming talk · </span><span class="conference-event-mobile">Upcoming talk · </span>UbiComp/ISWC 2026</p>
           </header>
-          <p class="conference-description">An LLM-powered mobile screen-reader system that helps blind and low vision
-            users navigate multi-step tasks. FocalFlow organises relevant options without changing their positions and
-            reveals decision-support details on demand, supporting deliberate choices while preserving user control.</p>
-          <p class="conference-connection">Making information easier to find can create more room for evaluating it.</p>
-          <ul class="conference-keywords" aria-label="FocalFlow research themes">
-            <li>Information Access</li>
-            <li>Decision Support</li>
-            <li>Accessibility</li>
-          </ul>
-          <a class="project-details-link" href="#project-focalflow" data-page-link>Project details</a>
+
+          <div class="conference-overview">
+            <ul class="conference-keywords" aria-label="Research directions">
+              <li>Information Access</li>
+              <li>Decision Support</li>
+              <li>Accessibility</li>
+            </ul>
+          </div>
 
           <div class="conference-schedule" aria-label="Conference session details">
-            <p class="conference-event">Upcoming talk · UbiComp/ISWC 2026</p>
             <dl>
               <div class="conference-talk">
-                <dt>Estimated</dt>
-                <dd><time datetime="2026-10-15T11:45:00+08:00">15 Oct · 11:45</time></dd>
+                <dt>My talk · estimated start</dt>
+                <dd>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                    <path d="M16 3v4M8 3v4M3 11h18"></path>
+                  </svg>
+                  <time datetime="2026-10-15T11:45:00+08:00">Thu 15 Oct · 11:45</time>
+                </dd>
               </div>
               <div class="conference-room">
                 <dt>Room</dt>
-                <dd>Pearl Hall (7F)</dd>
+                <dd>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="2.5"></circle>
+                  </svg>
+                  <span>Pearl Hall (7F)</span>
+                </dd>
               </div>
             </dl>
             <p class="conference-session">Full session: 11:00–12:30 (90 min)</p>
@@ -328,26 +326,68 @@
               <span>View Session</span>
             </a>
           </div>
+
+          <details class="conference-details">
+            <summary>About the project</summary>
+            <section class="conference-explanation">
+              <h3 class="conference-subtitle">AI-supported information access for deliberate decisions</h3>
+              <p class="conference-description">An LLM-powered mobile screen-reader system that helps blind and low vision
+                users navigate multi-step tasks. FocalFlow organises relevant options without changing their positions and
+                reveals decision-support details on demand, supporting deliberate choices while preserving user control.</p>
+              <p class="conference-connection">Making information easier to find can create more room for evaluating it.</p>
+            </section>
+            <section class="conference-explanation">
+              <h3>Why it matters</h3>
+              <p>Mobile tasks involve several decisions across different screens. For blind and low vision users,
+                screen readers turn a structured interface into a long sequence of spoken items. Relevant choices are
+                mixed with unrelated content, while details needed for comparison are scattered. This creates extra
+                mental effort and can lead people to miss information that matters to their decision.</p>
+            </section>
+            <section class="conference-explanation">
+              <h3>How FocalFlow helps</h3>
+              <p>FocalFlow uses LLM agents to organise interface information around the user’s current task. It provides
+                a task overview, filters the screen reader’s focus to relevant options without moving their positions,
+                and reveals supporting details when the user asks. This helps users keep track of the task and explore
+                alternatives while retaining control over the final choice.</p>
+            </section>
+            <figure class="conference-figure">
+              <a href="./assets/images/paper-focalflow-focus.png" aria-label="Open the full paper illustration">
+                <img src="./assets/images/paper-focalflow-focus.png" width="1600" height="956" loading="lazy"
+                  alt="Paper illustration: selectable options highlighted in purple, supporting details in blue, and unrelated interface content in grey.">
+              </a>
+              <figcaption>Start with relevant options. Reveal comparison details when needed.</figcaption>
+              <a class="conference-image-link" href="./assets/images/paper-focalflow-focus.png">Open full image</a>
+            </figure>
+          </details>
         </section>
 
-        <section class="research-interests" aria-labelledby="research-interests-heading">
-          <h3 class="h3 service-title" id="research-interests-heading">Research Interests</h3>
+        <section class="about-text">
+          <p>Hi, I’m Junan (Janus) Xie, a PhD student at <a href="https://www.hkust-gz.edu.cn/">HKUST Guangzhou</a>,
+            advised by <a href="https://rachelfranz.com">Rachel Franz</a> and <a
+              href="https://scholar.google.com/citations?user=cVDF1tkAAAAJ&amp;hl=en">Hui Xiong</a>.</p>
+          <p>My research connects two questions: how AI can organise information to support deliberate decisions,
+            and how people coordinate their attention as AI-assisted work unfolds. Across these settings, I study
+            how AI changes the effort people devote to finding information, evaluating it, and deciding what to do next.</p>
+          <p>I combine empirical studies with interactive system design. I am exploring how computational cognitive
+            models could inform adaptive support, with the aim of reducing unnecessary search and coordination while
+            preserving human judgment and control.</p>
+        </section>
+
+        <!--
+          - Research Interests
+        -->
+
+        <section class="research-interests">
+          <h3 class="h3 service-title" style="margin-bottom: 16px;">Research Interests</h3>
           <ul class="tag-list">
             <li class="tag">Human–AI Interaction</li>
             <li class="tag">Attention &amp; Cognitive Effort</li>
             <li class="tag">Adaptive Interfaces</li>
           </ul>
-          <p class="research-methods">Exploring: Computational Cognitive Modeling</p>
+          <p class="panel-label">Exploring: Computational Cognitive Modeling</p>
         </section>
 
-        <section class="research-questions" aria-labelledby="research-questions-heading">
-          <h3 class="h3 service-title" id="research-questions-heading">Research Questions</h3>
-          <ul class="research-question-links">
-            <li><a href="#research-attention" data-page-link>What deserves attention?</a></li>
-            <li><a href="#research-engagement" data-page-link>When should people engage?</a></li>
-            <li><a href="#research-adaptation" data-page-link>How should support adapt?</a></li>
-          </ul>
-        </section>
+
 
         <!--
           - Publications
@@ -595,70 +635,6 @@
 
 
 
-
-      <!--
-        - #RESEARCH
-      -->
-
-      <article class="research" data-page="research">
-        <header>
-          <h2 class="h2 article-title">Research</h2>
-        </header>
-        <p class="research-intro">Current focus: I am currently interested in how people coordinate their attention across
-          ongoing AI-assisted tasks, and how interfaces can support switching, resumption, and review.</p>
-        <p class="research-methods">Exploring: Computational Cognitive Modeling and computational rationality.</p>
-
-        <section class="research-question" id="research-attention" tabindex="-1" aria-labelledby="research-attention-heading">
-          <h3 id="research-attention-heading">What deserves attention?</h3>
-          <p>How can AI organise information so people can compare options and make informed choices?</p>
-        </section>
-        <section class="research-question" id="research-engagement" tabindex="-1" aria-labelledby="research-engagement-heading">
-          <h3 id="research-engagement-heading">When should people engage?</h3>
-          <p>How do people fit AI-assisted work around ongoing activities and return to unfinished tasks?</p>
-        </section>
-        <section class="research-question" id="research-adaptation" tabindex="-1" aria-labelledby="research-adaptation-heading">
-          <h3 id="research-adaptation-heading">How should support adapt?</h3>
-          <p>How can interfaces adjust timing, information detail, and user involvement while preserving human control?</p>
-        </section>
-      </article>
-
-      <!--
-        - #FOCALFLOW PROJECT
-      -->
-
-      <article class="project-focalflow" id="project-focalflow" data-page="project-focalflow" tabindex="-1"
-        aria-labelledby="focalflow-project-heading">
-        <header>
-          <h2 class="h2 article-title" id="focalflow-project-heading">FocalFlow: Facilitating Decision-Making in Multi-Step
-            Mobile Tasks for Blind and Low Vision People</h2>
-        </header>
-        <a class="project-details-link" href="#focalflow" data-page-link>Back to About</a>
-        <section class="conference-explanation">
-          <h3>Why it matters</h3>
-          <p>Mobile tasks involve several decisions across different screens. For blind and low vision users,
-            screen readers turn a structured interface into a long sequence of spoken items. Relevant choices are
-            mixed with unrelated content, while details needed for comparison are scattered. This creates extra
-            mental effort and can lead people to miss information that matters to their decision.</p>
-        </section>
-        <section class="conference-explanation">
-          <h3>How FocalFlow helps</h3>
-          <p>FocalFlow uses LLM agents to organise interface information around the user’s current task. It provides
-            a task overview, filters the screen reader’s focus to relevant options without moving their positions,
-            and reveals supporting details when the user asks. This helps users keep track of the task and explore
-            alternatives while retaining control over the final choice.</p>
-        </section>
-        <figure class="conference-figure">
-          <a href="./assets/images/paper-focalflow-focus.png" aria-label="Open the full paper illustration">
-            <img src="./assets/images/paper-focalflow-focus.png" width="1600" height="956" loading="lazy"
-              alt="Paper illustration: selectable options highlighted in purple, supporting details in blue, and unrelated interface content in grey.">
-          </a>
-          <figcaption>Start with relevant options. Reveal comparison details when needed.</figcaption>
-          <a class="conference-image-link" href="./assets/images/paper-focalflow-focus.png">Open full image</a>
-        </figure>
-        <p class="conference-figure-key">From the paper: purple marks decision options; blue marks information that helps evaluate
-            them. FocalFlow adapts the screen reader’s focus while keeping the interface in place.</p>
-        <a class="project-details-link" href="assets/paper/26IMWUT-FocalFlow.pdf" type="application/pdf">Read Paper</a>
-      </article>
 
       <!--
         - #RESUME
@@ -1013,7 +989,7 @@
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js?v=20261013-1"></script>
+  <script src="./assets/js/script.js?v=20261013-2"></script>
 
   <!--
     - ionicon link
