@@ -515,16 +515,23 @@ main {
   max-width: 100%;
 }
 
-.info-content .title {
-  color: var(--white-1);
-  background: var(--onyx);
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 100%;
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
-  width: max-content;
+}
+
+.profile-tags li {
   max-width: 100%;
-  white-space: normal;
-  padding: 3px 12px;
-  border-radius: 8px;
+  padding: 4px 7px;
+  border: 1px solid var(--jet);
+  border-radius: 6px;
+  background: var(--onyx);
+  color: var(--white-1);
+  line-height: 1.5;
 }
 
 .info_more-btn {
@@ -566,7 +573,6 @@ main {
 }
 
 .mobile-profile-line,
-.mobile-research-line,
 .profile-quick-actions,
 .mobile-conference-slot,
 .conference-event-mobile {
@@ -2191,10 +2197,6 @@ textarea.form-input::-webkit-resizer {
     margin-bottom: 15px;
   }
 
-  .info-content .title {
-    padding: 5px 18px;
-  }
-
   .info_more-btn {
     top: -30px;
     right: -30px;
@@ -2829,8 +2831,8 @@ textarea.form-input::-webkit-resizer {
     text-align: center;
   }
 
-  .info-content .title {
-    margin: 0 auto;
+  .profile-tags {
+    justify-content: center;
   }
 
   .info_more-btn {
@@ -2970,7 +2972,6 @@ textarea.form-input::-webkit-resizer {
     margin-bottom: 4px;
   }
 
-  .info-content .title,
   .info_more-btn span {
     display: none;
   }
@@ -2979,17 +2980,17 @@ textarea.form-input::-webkit-resizer {
     display: block;
   }
 
-  .mobile-profile-line,
-  .mobile-research-line {
+  .mobile-profile-line {
     display: block;
     color: var(--light-gray);
     font-size: 13px;
     line-height: 1.5;
   }
 
-  .mobile-research-line {
-    margin-top: 4px;
-    font-size: 12px;
+  .profile-tags {
+    gap: 5px;
+    margin-top: 6px;
+    font-size: 11px;
   }
 
   .profile-quick-actions {
