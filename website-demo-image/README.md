@@ -1,10 +1,10 @@
 # Homepage preview and validation
 
-Updated 2026-10-18: the owner requested that the conference card be hidden while keeping it available for reuse.
+Updated 2026-10-18: the profile label is refreshed; the conference card remains hidden for reuse.
 
 ## Current previews
 
-| Viewport | Card enabled | Current, dark | Current, light |
+| Viewport | Previous profile label | Current, dark | Current, light |
 | --- | --- | --- | --- |
 | 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
 | 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
@@ -12,6 +12,8 @@ Updated 2026-10-18: the owner requested that the conference card be hidden while
 [Expanded paper explanation](mobile-expanded.png) is an archived preview of the retained card when enabled. Earlier Research/project-page screenshot files are historical.
 
 ## Current scope
+
+- The desktop and mobile profile label reads Human-Centered AI, Behavior Modelling, Adaptive Interfaces, with its existing placement and styles.
 
 - The conference card is hidden on desktop and mobile using the native HTML hidden attribute. Its mobile container is also hidden, so it leaves no border or empty space. Existing About / Resume / Contact navigation and the surrounding layout are retained.
 - All conference content remains in the source: the orange full title, white short summary, date and room, calendar, local PDF, View Session, default-closed explanation and illustration. Hidden deep links do not focus or scroll to the archived card.
@@ -30,11 +32,11 @@ The existing mobile/desktop placement and shared-link behavior resume automatica
 
 ## Current verification
 
-- A source comparison confirms the entire homepage content is preserved apart from the single hidden attribute, its explanatory comment and the CSS/JS cache version. Linked PDFs, calendar and images are unchanged.
+- The latest source comparison confirms two profile-text replacements and asset-query versions only in HTML. One desktop-only max-width constraint keeps the longer label inside the original sidebar column. JavaScript source, linked PDFs, calendar and images are unchanged. The conference card and its hidden switch are preserved.
 - Actual isolated Chrome checks at 320, 390, 768 and 1440 CSS pixels in light/dark themes: card and mobile slot hidden, no horizontal overflow, Publications still visible, and no focus on hidden conference links.
 - About / Resume / Contact navigation works at all eight width/theme combinations; theme and sidebar controls work at screenshot widths. Removing hidden restores the retained card, including placement after a mobile/desktop resize; hiding it again collapses the mobile container.
 - JavaScript syntax and git diff whitespace checks pass. Screenshots were captured after existing page transitions settled. The checks use desktop Chrome with simulated viewports, not physical-phone acceptance.
-- CSS and JS URLs are versioned together as 20261018-1. This change does not address the earlier mainland-network loading report.
+- CSS and JS URLs are versioned together as 20261018-2. This change does not address the earlier mainland-network loading report.
 
 ## Sources and estimate
 
@@ -104,3 +106,7 @@ Actual isolated Chrome checks at 320, 390 and 1440 px in both themes confirmed t
 [Restored biography preview](about-restored.png). The original institution/adviser wording is restored from d53c5c8 with only first-year omitted. Prof. Rachel Franz, Prof. Hui Xiong, Prof. Mingming Fan and Prof. Xin Tong retain their original link destinations; the master's and Harbin Institute of Technology, Shenzhen details remain. Accessibility and Human Behavior Modelling are restored as research interests, and the standalone Exploring: Computational Cognitive Modeling line is removed. New research paragraphs remain unchanged.
 
 Independent source review passed. Actual Chrome checks at 320, 390 and 1440 px in both themes confirmed the orange full title, all four professor prefixes, education and interest text, removal of the standalone line, no overflow, closed details and the original mobile meeting placement.
+
+## Profile label wording (2026-10-18)
+
+Both desktop and mobile labels use Human-Centered AI, Behavior Modelling, Adaptive Interfaces. Chrome previews at 320, 390, 768, 1250 and 1440 px in light/dark themes confirm wrapping without clipping, horizontal overflow or a sidebar overlap with the main column. A single desktop max-width: 100% prevents the longer label from widening the sidebar. The conference card remains hidden. Independent source review confirms only the two text nodes, asset-query versions and this scoped CSS constraint changed; Research Interests and school/adviser text remain unchanged.

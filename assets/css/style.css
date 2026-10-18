@@ -2800,6 +2800,7 @@ textarea.form-input::-webkit-resizer {
   .sidebar {
     position: static;
     max-height: none;
+    max-width: 100%;
     height: max-content;
     margin-bottom: 0;
     padding-top: 60px;
