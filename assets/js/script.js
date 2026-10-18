@@ -61,7 +61,7 @@ spotlight.before(conferenceHome);
 conferenceKeywords.before(keywordsHome);
 
 const syncConferenceVisibility = function () {
-  mobileConferenceSlot.hidden = !mobileLayout.matches || !aboutPage.classList.contains("active");
+  mobileConferenceSlot.hidden = spotlight.hidden || !mobileLayout.matches || !aboutPage.classList.contains("active");
 };
 
 const placeConference = function () {
@@ -189,9 +189,9 @@ for (const link of navigationLinks) {
   });
 }
 
-// A shared conference link always reveals the About page before focusing the panel.
+// A shared link to an enabled conference card reveals About before focusing it.
 const openConferenceLink = function () {
-  if (window.location.hash !== "#focalflow") return;
+  if (spotlight.hidden || window.location.hash !== "#focalflow") return;
   activatePage("about");
   window.requestAnimationFrame(function () {
     spotlight.focus({ preventScroll: true });

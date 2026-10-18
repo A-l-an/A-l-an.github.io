@@ -1,33 +1,40 @@
 # Homepage preview and validation
 
-Updated 2026-10-14 after the owner clarified that the original UI and positions should remain; only wording should change. Layout is restored to d53c5c8.
+Updated 2026-10-18: the owner requested that the conference card be hidden while keeping it available for reuse.
 
 ## Current previews
 
-| Viewport | Before education restore (0e9d593, light) | Current, dark | Current, light |
+| Viewport | Card enabled | Current, dark | Current, light |
 | --- | --- | --- | --- |
 | 390 × 844 | [Mobile](before-mobile.png) | [Mobile](mobile.png) | [Mobile](mobile-light.png) |
 | 1440 × 1000 | [Desktop](before-desktop.png) | [Desktop](desktop.png) | [Desktop](desktop-light.png) |
 
-[Expanded paper explanation](mobile-expanded.png) uses a tall viewport to capture the complete original card. Earlier Research/project-page screenshot files are historical and do not represent the current UI.
+[Expanded paper explanation](mobile-expanded.png) is an archived preview of the retained card when enabled. Earlier Research/project-page screenshot files are historical.
 
 ## Current scope
 
-- Original About / Resume / Contact navigation, original desktop conference layout and original mobile conference placement are restored. The added Research/project views and large research-theme heading are removed.
-- The original greeting and education/advisor paragraphs are restored, excluding first-year. Four Prof. prefixes, Master's advisers and the bachelor's institution remain. The newer two research paragraphs stay unchanged. The original Research Interests component includes Accessibility and Human Behavior Modelling alongside its three current interests; the standalone Exploring line is removed.
-- Upcoming talk · UbiComp/ISWC 2026, the estimated 15 October 11:45 time, Pearl Hall (7F), full session, calendar, PDF and View Session use the original positions and styling.
-- The complete FocalFlow paper title is uniformly orange in both themes and all device widths. Its visible summary, AI-supported information access for deliberate decisions, is 13 px white; light mode adds a small dark background for readability. The detailed description and connection sentence remain inside the default-closed disclosure, alongside the existing public explanation and illustration.
-- JavaScript is byte-identical to d53c5c8. CSS differs from that layout only by identity text wrapping constraints, a 44 px minimum theme target, the small summary style, and the orange paper title. PDF, calendar, contact, portrait, Publications, Resume, Contact and News remain unchanged.
+- The conference card is hidden on desktop and mobile using the native HTML hidden attribute. Its mobile container is also hidden, so it leaves no border or empty space. Existing About / Resume / Contact navigation and the surrounding layout are retained.
+- All conference content remains in the source: the orange full title, white short summary, date and room, calendar, local PDF, View Session, default-closed explanation and illustration. Hidden deep links do not focus or scroll to the archived card.
+- The original school/advisor introduction, four Prof. prefixes, Master's advisers and bachelor's institution remain. The two research paragraphs and five Research Interests are unchanged.
+- FocalFlow remains visible in Publications with its local PDF. Publication, PDF, calendar, portrait, Resume, Contact and News content is unchanged.
+
+## Restore the conference card
+
+Remove hidden from the conference section in [index.html](../index.html):
+
+```html
+<section class="conference-spotlight" id="focalflow" ... hidden>
+```
+
+The existing mobile/desktop placement and shared-link behavior resume automatically. Update the retained talk details before reusing it for another event.
 
 ## Current verification
 
-- Source audit checks the original page/component order, original ID set, exact supplied wording, unchanged schedule/SVG/actions/links, retained sections/assets and the minimal CSS/JS difference.
-- Real isolated Chrome checks at 320, 390, 768 and 1440 CSS pixels in light/dark themes: no horizontal overflow, meeting date and room within the mobile first viewport, paper prose not drawn until native expansion, and restored navigation/sidebar/theme/#focalflow behavior.
-- Native details visibility is checked with checkVisibility and rendered screenshots; getClientRects alone can report geometry for closed details and is not evidence that its contents are drawn.
-- Independent read-only review passed10 width/theme scenarios, including320×568 and390×844 first-screen essentials, native mouse/Enter expansion and hidden-link keyboard behavior; no findings.
-- These are local Chrome viewport checks, not physical-phone or production-rendering acceptance. CSS and JS URLs are versioned together as 20261014-1.
-
-The earlier mainland-phone blank-loading diagnosis remains unresolved: one desktop GitHub root request timed out after12 s, while the measured Google font stylesheet requests succeeded. This wording/layout correction makes no claim to fix network loading.
+- A source comparison confirms the entire homepage content is preserved apart from the single hidden attribute, its explanatory comment and the CSS/JS cache version. Linked PDFs, calendar and images are unchanged.
+- Actual isolated Chrome checks at 320, 390, 768 and 1440 CSS pixels in light/dark themes: card and mobile slot hidden, no horizontal overflow, Publications still visible, and no focus on hidden conference links.
+- About / Resume / Contact navigation works at all eight width/theme combinations; theme and sidebar controls work at screenshot widths. Removing hidden restores the retained card, including placement after a mobile/desktop resize; hiding it again collapses the mobile container.
+- JavaScript syntax and git diff whitespace checks pass. Screenshots were captured after existing page transitions settled. The checks use desktop Chrome with simulated viewports, not physical-phone acceptance.
+- CSS and JS URLs are versioned together as 20261018-1. This change does not address the earlier mainland-network loading report.
 
 ## Sources and estimate
 

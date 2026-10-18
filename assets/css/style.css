@@ -900,6 +900,10 @@ main {
   scroll-margin-top: 20px;
 }
 
+.conference-spotlight[hidden] {
+  display: none;
+}
+
 .conference-spotlight h2 {
   color: var(--orange-yellow-crayola);
   font-size: 16px;
